@@ -66,8 +66,8 @@ export function ReportCard({ report, onGenerate, onSchedule }: ReportCardProps) 
           onClick={() => onGenerate(report)}
           className={cn(
             "flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
-            "bg-[#1a1a1a] text-white hover:bg-[#2a2a2a] hover:shadow-lg hover:scale-105",
-            "focus:outline-none focus:ring-2 focus:ring-[#1a1a1a] focus:ring-offset-2 active:scale-95"
+            "bg-[#60A5FA] text-white hover:bg-[#3B82F6] hover:shadow-lg hover:scale-105",
+            "focus:outline-none focus:ring-2 focus:ring-[#60A5FA] focus:ring-offset-2 active:scale-95"
           )}
         >
           <PlayCircle className="h-4 w-4 transition-transform group-hover:scale-110" />

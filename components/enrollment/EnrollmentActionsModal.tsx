@@ -362,7 +362,7 @@ export function EnrollmentActionsModal({
             </button>
             <button
               onClick={onClose}
-              className="px-4 py-2 rounded-lg bg-[#1a1a1a] text-white text-sm font-medium hover:bg-[#2a2a2a] transition-colors"
+              className="px-4 py-2 rounded-lg bg-[#60A5FA] text-white text-sm font-medium hover:bg-[#3B82F6] transition-colors"
             >
               Done
             </button>
@@ -459,7 +459,7 @@ export function EnrollmentActionsModal({
                 </button>
                 <button
                   onClick={handleStartSync}
-                  className="px-4 py-2 rounded-lg bg-[#1a1a1a] text-white text-sm font-medium hover:bg-[#2a2a2a] transition-colors"
+                  className="px-4 py-2 rounded-lg bg-[#60A5FA] text-white text-sm font-medium hover:bg-[#3B82F6] transition-colors"
                 >
                   Start Sync Now
                 </button>
@@ -612,7 +612,7 @@ export function EnrollmentActionsModal({
                 </button>
                 <button
                   onClick={handleExport}
-                  className="px-4 py-2 rounded-lg bg-[#1a1a1a] text-white text-sm font-medium hover:bg-[#2a2a2a] transition-colors"
+                  className="px-4 py-2 rounded-lg bg-[#60A5FA] text-white text-sm font-medium hover:bg-[#3B82F6] transition-colors"
                 >
                   Generate Export
                 </button>

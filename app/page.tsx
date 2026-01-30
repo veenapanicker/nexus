@@ -94,8 +94,8 @@ export default function ReportLibraryPage() {
                 href="/downloads"
                 className={cn(
                   "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
-                  "bg-[#1a1a1a] text-white",
-                  "hover:bg-[#2a2a2a] hover:shadow-lg hover:scale-105"
+                  "bg-[#60A5FA] text-white",
+                  "hover:bg-[#3B82F6] hover:shadow-lg hover:scale-105"
                 )}
               >
                 <Download className="h-4 w-4" />

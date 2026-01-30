@@ -243,7 +243,7 @@ export function AddLicenseModal({ open, onClose }: AddLicenseModalProps) {
                     disabled={isSubmitting || !studentEmail || !studentName}
                     className={cn(
                       "w-full py-3 rounded-lg text-sm font-medium transition-all",
-                      "bg-[#1a1a1a] text-white hover:bg-[#2a2a2a]",
+                      "bg-[#60A5FA] text-white hover:bg-[#3B82F6]",
                       "disabled:opacity-50 disabled:cursor-not-allowed",
                       "flex items-center justify-center gap-2"
                     )}
@@ -341,7 +341,7 @@ export function AddLicenseModal({ open, onClose }: AddLicenseModalProps) {
                         disabled={isSubmitting}
                         className={cn(
                           "w-full py-3 rounded-lg text-sm font-medium transition-all",
-                          "bg-[#1a1a1a] text-white hover:bg-[#2a2a2a]",
+                          "bg-[#60A5FA] text-white hover:bg-[#3B82F6]",
                           "disabled:opacity-50 disabled:cursor-not-allowed",
                           "flex items-center justify-center gap-2"
                         )}

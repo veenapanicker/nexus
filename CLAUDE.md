@@ -54,7 +54,7 @@ Global state via React Context (`useReports()` hook):
 - ALEKS: Uses MH Red `#E21A23`
 
 **Button Colors**:
-- Primary buttons: `bg-[#1a1a1a]` (dark charcoal), NOT red
+- Primary buttons: `bg-[#60A5FA]` (light blue) with `hover:bg-[#3B82F6]`
 - Secondary buttons: `border border-[var(--border)]` with hover states
 - Red is reserved for brand accents (header strip, product tags), not interactive elements
 

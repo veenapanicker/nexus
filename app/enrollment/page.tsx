@@ -140,7 +140,7 @@ export default function EnrollmentPage() {
             <div className="flex items-center gap-3">
               <button
                 onClick={openSyncModal}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1a1a1a] text-white text-sm font-medium hover:bg-[#2a2a2a] transition-colors"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#60A5FA] text-white text-sm font-medium hover:bg-[#3B82F6] transition-colors"
               >
                 <RefreshCw className="h-4 w-4" />
                 Sync Now
@@ -370,7 +370,7 @@ export default function EnrollmentPage() {
                 >
                   Previous
                 </button>
-                <button className="px-3 py-1.5 rounded-lg text-sm bg-[#1a1a1a] text-white">
+                <button className="px-3 py-1.5 rounded-lg text-sm bg-[#60A5FA] text-white">
                   1
                 </button>
                 <button className="px-3 py-1.5 rounded-lg text-sm border border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]">

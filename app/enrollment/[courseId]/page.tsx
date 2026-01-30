@@ -364,7 +364,7 @@ export default function CourseDetailsPage() {
               >
                 Previous
               </button>
-              <button className="px-3 py-1.5 rounded-lg text-sm bg-[#1a1a1a] text-white">
+              <button className="px-3 py-1.5 rounded-lg text-sm bg-[#60A5FA] text-white">
                 1
               </button>
               <button className="px-3 py-1.5 rounded-lg text-sm border border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]">

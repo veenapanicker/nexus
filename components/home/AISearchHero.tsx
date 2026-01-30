@@ -488,7 +488,7 @@ export function AISearchHero() {
                 className={cn(
                   "m-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2",
                   query
-                    ? "bg-[#1a1a1a] text-white hover:bg-[#2a2a2a] shadow-md hover:shadow-lg"
+                    ? "bg-[#60A5FA] text-white hover:bg-[#3B82F6] shadow-md hover:shadow-lg"
                     : "bg-[var(--muted)] text-[var(--muted-foreground)] cursor-not-allowed"
                 )}
                 disabled={!query}

@@ -275,9 +275,9 @@ export function ScheduleModal({ report, isOpen, onClose }: ScheduleModalProps) {
               onClick={handleSchedule}
               className={cn(
                 "px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200",
-                "bg-[#1a1a1a] text-white",
-                "hover:bg-[#2a2a2a] hover:shadow-lg hover:scale-105",
-                "focus:outline-none focus:ring-2 focus:ring-[#1a1a1a] focus:ring-offset-2",
+                "bg-[#60A5FA] text-white",
+                "hover:bg-[#3B82F6] hover:shadow-lg hover:scale-105",
+                "focus:outline-none focus:ring-2 focus:ring-[#60A5FA] focus:ring-offset-2",
                 "active:scale-95"
               )}
             >
