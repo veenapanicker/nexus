@@ -947,3 +947,309 @@ export function getEnrollmentStatusColor(status: EnrollmentStatus): string {
   };
   return colors[status] || "bg-gray-100 text-gray-700";
 }
+
+// ============================================================
+// ENROLLMENT EXTENDED DATA (for Enrollment Dashboard)
+// ============================================================
+
+export interface LMSSyncInfo {
+  lmsName: string;
+  lastSynced: Date;
+  totalCourses: number;
+  totalStudents: number;
+  newEnrollments: number;
+  droppedStudents: number;
+  autoSyncTime: string;
+}
+
+export interface SyncHistoryItem {
+  id: string;
+  timestamp: Date;
+  type: "auto" | "manual";
+  status: "success" | "partial" | "failed";
+  coursesUpdated: number;
+  studentsProcessed: number;
+  newEnrollments: number;
+  droppedStudents: number;
+  duration?: string;
+  errorMessage?: string;
+}
+
+export interface EnrollmentByProduct {
+  product: Product;
+  totalStudents: number;
+  activeStudents: number;
+  activePercentage: number;
+  courseCount: number;
+  topCourses: { name: string; enrolled: number }[];
+}
+
+export const lmsSyncInfo: LMSSyncInfo = {
+  lmsName: "Canvas",
+  lastSynced: new Date("2026-01-26T10:45:00"),
+  totalCourses: 34,
+  totalStudents: 1247,
+  newEnrollments: 12,
+  droppedStudents: 3,
+  autoSyncTime: "10:45 AM",
+};
+
+export const syncHistory: SyncHistoryItem[] = [
+  {
+    id: "sync-1",
+    timestamp: new Date("2026-01-26T12:45:00"),
+    type: "manual",
+    status: "success",
+    coursesUpdated: 34,
+    studentsProcessed: 1247,
+    newEnrollments: 12,
+    droppedStudents: 3,
+    duration: "2 min 18 sec",
+  },
+  {
+    id: "sync-2",
+    timestamp: new Date("2026-01-26T10:45:00"),
+    type: "auto",
+    status: "success",
+    coursesUpdated: 34,
+    studentsProcessed: 1235,
+    newEnrollments: 5,
+    droppedStudents: 1,
+    duration: "2 min 5 sec",
+  },
+  {
+    id: "sync-3",
+    timestamp: new Date("2026-01-25T10:45:00"),
+    type: "auto",
+    status: "success",
+    coursesUpdated: 34,
+    studentsProcessed: 1231,
+    newEnrollments: 8,
+    droppedStudents: 2,
+    duration: "2 min 12 sec",
+  },
+  {
+    id: "sync-4",
+    timestamp: new Date("2026-01-24T10:45:00"),
+    type: "auto",
+    status: "success",
+    coursesUpdated: 34,
+    studentsProcessed: 1225,
+    newEnrollments: 15,
+    droppedStudents: 0,
+    duration: "2 min 8 sec",
+  },
+  {
+    id: "sync-5",
+    timestamp: new Date("2026-01-23T10:45:00"),
+    type: "auto",
+    status: "partial",
+    coursesUpdated: 28,
+    studentsProcessed: 1210,
+    newEnrollments: 0,
+    droppedStudents: 0,
+    duration: "3 min 45 sec",
+    errorMessage: "Timeout - Retried at 11:15 AM",
+  },
+  {
+    id: "sync-6",
+    timestamp: new Date("2026-01-23T11:15:00"),
+    type: "manual",
+    status: "success",
+    coursesUpdated: 34,
+    studentsProcessed: 1210,
+    newEnrollments: 0,
+    droppedStudents: 0,
+    duration: "2 min 20 sec",
+  },
+  {
+    id: "sync-7",
+    timestamp: new Date("2026-01-22T10:45:00"),
+    type: "auto",
+    status: "success",
+    coursesUpdated: 34,
+    studentsProcessed: 1210,
+    newEnrollments: 7,
+    droppedStudents: 3,
+    duration: "2 min 15 sec",
+  },
+];
+
+export const enrollmentByProduct: EnrollmentByProduct[] = [
+  {
+    product: "Connect",
+    totalStudents: 856,
+    activeStudents: 698,
+    activePercentage: 82,
+    courseCount: 18,
+    topCourses: [
+      { name: "Biology 101", enrolled: 247 },
+      { name: "Intro to Chemistry", enrolled: 189 },
+      { name: "Business Math", enrolled: 134 },
+    ],
+  },
+  {
+    product: "ALEKS",
+    totalStudents: 421,
+    activeStudents: 378,
+    activePercentage: 90,
+    courseCount: 11,
+    topCourses: [
+      { name: "Calculus I", enrolled: 156 },
+      { name: "Statistics", enrolled: 125 },
+      { name: "Pre-Algebra", enrolled: 89 },
+    ],
+  },
+  {
+    product: "SimNet",
+    totalStudents: 178,
+    activeStudents: 143,
+    activePercentage: 80,
+    courseCount: 5,
+    topCourses: [
+      { name: "Computer Skills", enrolled: 118 },
+      { name: "MS Office", enrolled: 60 },
+    ],
+  },
+];
+
+// Extended course data for enrollment dashboard
+export interface EnrollmentCourse {
+  id: string;
+  name: string;
+  code: string;
+  product: Product;
+  instructor: string;
+  term: string;
+  enrolledCount: number;
+  activeCount: number;
+  lastUpdated: Date;
+}
+
+export const enrollmentCourses: EnrollmentCourse[] = [
+  {
+    id: "enc-1",
+    name: "Biology 101",
+    code: "BIO 101",
+    product: "Connect",
+    instructor: "Dr. Sarah Ahmed",
+    term: "Spring 2026",
+    enrolledCount: 247,
+    activeCount: 198,
+    lastUpdated: new Date("2026-01-26T10:45:00"),
+  },
+  {
+    id: "enc-2",
+    name: "Intro to Chemistry",
+    code: "CHEM 101",
+    product: "Connect",
+    instructor: "Dr. Jennifer Lee",
+    term: "Spring 2026",
+    enrolledCount: 189,
+    activeCount: 167,
+    lastUpdated: new Date("2026-01-26T10:45:00"),
+  },
+  {
+    id: "enc-3",
+    name: "Calculus I",
+    code: "MATH 150",
+    product: "ALEKS",
+    instructor: "Dr. Lisa Wang",
+    term: "Spring 2026",
+    enrolledCount: 156,
+    activeCount: 142,
+    lastUpdated: new Date("2026-01-26T10:45:00"),
+  },
+  {
+    id: "enc-4",
+    name: "Business Math",
+    code: "MATH 110",
+    product: "Connect",
+    instructor: "Prof. James Miller",
+    term: "Spring 2026",
+    enrolledCount: 134,
+    activeCount: 108,
+    lastUpdated: new Date("2026-01-26T10:45:00"),
+  },
+  {
+    id: "enc-5",
+    name: "Physics 101",
+    code: "PHYS 101",
+    product: "Connect",
+    instructor: "Dr. Michael Brown",
+    term: "Spring 2026",
+    enrolledCount: 128,
+    activeCount: 115,
+    lastUpdated: new Date("2026-01-26T10:45:00"),
+  },
+  {
+    id: "enc-6",
+    name: "Statistics",
+    code: "STAT 200",
+    product: "ALEKS",
+    instructor: "Dr. Thomas Green",
+    term: "Spring 2026",
+    enrolledCount: 125,
+    activeCount: 119,
+    lastUpdated: new Date("2026-01-26T10:45:00"),
+  },
+  {
+    id: "enc-7",
+    name: "Computer Skills",
+    code: "CIS 100",
+    product: "SimNet",
+    instructor: "Prof. Mark Davis",
+    term: "Spring 2026",
+    enrolledCount: 118,
+    activeCount: 95,
+    lastUpdated: new Date("2026-01-26T10:45:00"),
+  },
+];
+
+// Extended student data for course details page
+export interface CourseStudent {
+  id: string;
+  studentId: string;
+  name: string;
+  email: string;
+  enrollmentDate: Date;
+  lastAccess: Date | null;
+  status: "active" | "inactive";
+}
+
+export const courseStudents: CourseStudent[] = [
+  { id: "cs-1", studentId: "202401234", name: "Ahmed, Fatima", email: "fahmed@ksu.edu.sa", enrollmentDate: new Date("2026-01-10"), lastAccess: new Date("2026-01-26"), status: "active" },
+  { id: "cs-2", studentId: "202401235", name: "Al-Rashid, Omar", email: "oalrashid@ksu.edu", enrollmentDate: new Date("2026-01-10"), lastAccess: new Date("2026-01-25"), status: "active" },
+  { id: "cs-3", studentId: "202401236", name: "Hassan, Layla", email: "lhassan@ksu.edu.sa", enrollmentDate: new Date("2026-01-10"), lastAccess: new Date("2026-01-26"), status: "active" },
+  { id: "cs-4", studentId: "202401237", name: "Mohammed, Khaled", email: "kmohammed@ksu.edu", enrollmentDate: new Date("2026-01-10"), lastAccess: new Date("2026-01-24"), status: "active" },
+  { id: "cs-5", studentId: "202401238", name: "Nasser, Aisha", email: "anasser@ksu.edu.sa", enrollmentDate: new Date("2026-01-10"), lastAccess: new Date("2026-01-26"), status: "active" },
+  { id: "cs-6", studentId: "202401239", name: "Abdullah, Yousef", email: "yabdullah@ksu.edu", enrollmentDate: new Date("2026-01-10"), lastAccess: new Date("2026-01-25"), status: "active" },
+  { id: "cs-7", studentId: "202401240", name: "Ibrahim, Nora", email: "nibrahim@ksu.edu.sa", enrollmentDate: new Date("2026-01-10"), lastAccess: new Date("2026-01-26"), status: "active" },
+  { id: "cs-8", studentId: "202401241", name: "Salem, Tariq", email: "tsalem@ksu.edu.sa", enrollmentDate: new Date("2026-01-10"), lastAccess: new Date("2026-01-23"), status: "active" },
+  { id: "cs-9", studentId: "202401242", name: "Khalil, Maryam", email: "mkhalil@ksu.edu.sa", enrollmentDate: new Date("2026-01-10"), lastAccess: new Date("2026-01-25"), status: "active" },
+  { id: "cs-10", studentId: "202401243", name: "Fahad, Sara", email: "sfahad@ksu.edu.sa", enrollmentDate: new Date("2026-01-10"), lastAccess: new Date("2026-01-26"), status: "active" },
+  { id: "cs-11", studentId: "202401244", name: "Mansour, Ali", email: "amansour@ksu.edu.sa", enrollmentDate: new Date("2026-01-10"), lastAccess: new Date("2026-01-21"), status: "inactive" },
+  { id: "cs-12", studentId: "202401245", name: "Othman, Hala", email: "hothman@ksu.edu.sa", enrollmentDate: new Date("2026-01-10"), lastAccess: new Date("2026-01-18"), status: "inactive" },
+];
+
+export function getEnrollmentDashboardStats() {
+  const totalStudents = 1247;
+  const activeStudents = 1089;
+  const totalCourses = 34;
+
+  const connectStudents = 856;
+  const aleksStudents = 421;
+  const simnetStudents = 178;
+
+  return {
+    total: totalStudents,
+    active: activeStudents,
+    activePercentage: Math.round((activeStudents / totalStudents) * 100),
+    courses: totalCourses,
+    byProduct: {
+      Connect: { count: connectStudents, percentage: Math.round((connectStudents / totalStudents) * 100) },
+      ALEKS: { count: aleksStudents, percentage: Math.round((aleksStudents / totalStudents) * 100) },
+      SimNet: { count: simnetStudents, percentage: Math.round((simnetStudents / totalStudents) * 100) },
+    },
+  };
+}

@@ -243,7 +243,7 @@ export function AddLicenseModal({ open, onClose }: AddLicenseModalProps) {
                     disabled={isSubmitting || !studentEmail || !studentName}
                     className={cn(
                       "w-full py-3 rounded-lg text-sm font-medium transition-all",
-                      "bg-[#E21A23] text-white hover:bg-[#B8131A]",
+                      "bg-[#1a1a1a] text-white hover:bg-[#2a2a2a]",
                       "disabled:opacity-50 disabled:cursor-not-allowed",
                       "flex items-center justify-center gap-2"
                     )}
@@ -262,7 +262,7 @@ export function AddLicenseModal({ open, onClose }: AddLicenseModalProps) {
                 <div className="space-y-4">
                   {!uploadedFile ? (
                     <label className="block">
-                      <div className="border-2 border-dashed border-[var(--border)] rounded-xl p-8 text-center cursor-pointer hover:border-[#E21A23]/50 hover:bg-[#E21A23]/5 transition-all">
+                      <div className="border-2 border-dashed border-[var(--border)] rounded-xl p-8 text-center cursor-pointer hover:border-[var(--foreground)]/30 hover:bg-[var(--muted)] transition-all">
                         <Upload className="h-10 w-10 text-[var(--muted-foreground)] mx-auto mb-3" />
                         <p className="text-sm font-medium text-[var(--foreground)] mb-1">
                           Drop your file here or click to browse
@@ -341,7 +341,7 @@ export function AddLicenseModal({ open, onClose }: AddLicenseModalProps) {
                         disabled={isSubmitting}
                         className={cn(
                           "w-full py-3 rounded-lg text-sm font-medium transition-all",
-                          "bg-[#E21A23] text-white hover:bg-[#B8131A]",
+                          "bg-[#1a1a1a] text-white hover:bg-[#2a2a2a]",
                           "disabled:opacity-50 disabled:cursor-not-allowed",
                           "flex items-center justify-center gap-2"
                         )}

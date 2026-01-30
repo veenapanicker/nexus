@@ -16,7 +16,7 @@ export function ReportCard({ report, onGenerate, onSchedule }: ReportCardProps) 
     <div
       className={cn(
         "bg-[var(--card)] rounded-xl border border-[var(--border)] p-5 hover:shadow-lg transition-all duration-300 group",
-        "hover:border-[#E21A23]/30 hover:shadow-glow cursor-pointer transform hover:scale-105"
+        "hover:border-[var(--foreground)]/20 hover:shadow-lg cursor-pointer transform hover:scale-105"
       )}
     >
       <div className="flex items-start justify-between gap-4">
@@ -66,8 +66,8 @@ export function ReportCard({ report, onGenerate, onSchedule }: ReportCardProps) 
           onClick={() => onGenerate(report)}
           className={cn(
             "flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
-            "bg-[#E21A23] text-white hover:bg-[#B8131A] hover:shadow-glow hover:scale-105",
-            "focus:outline-none focus:ring-2 focus:ring-[#E21A23] focus:ring-offset-2 active:scale-95"
+            "bg-[#1a1a1a] text-white hover:bg-[#2a2a2a] hover:shadow-lg hover:scale-105",
+            "focus:outline-none focus:ring-2 focus:ring-[#1a1a1a] focus:ring-offset-2 active:scale-95"
           )}
         >
           <PlayCircle className="h-4 w-4 transition-transform group-hover:scale-110" />
@@ -78,8 +78,8 @@ export function ReportCard({ report, onGenerate, onSchedule }: ReportCardProps) 
           className={cn(
             "flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
             "border border-[var(--border)] text-[var(--foreground)]",
-            "hover:bg-[var(--muted)] hover:border-[#E21A23]/30 hover:shadow-glow hover:scale-105",
-            "focus:outline-none focus:ring-2 focus:ring-[#E21A23] focus:ring-offset-2 active:scale-95"
+            "hover:bg-[var(--muted)] hover:border-[var(--foreground)]/20 hover:shadow-lg hover:scale-105",
+            "focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/30 focus:ring-offset-2 active:scale-95"
           )}
         >
           <Calendar className="h-4 w-4 transition-transform group-hover:scale-110" />

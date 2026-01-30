@@ -169,9 +169,9 @@ export default function LoginPage() {
               disabled={isLoading}
               className={cn(
                 "w-full py-3 rounded-lg text-sm font-medium transition-all duration-200",
-                "bg-[#E21A23] text-white",
-                "hover:bg-[#B8131A] hover:shadow-glow hover:scale-[1.02]",
-                "focus:outline-none focus:ring-2 focus:ring-[#E21A23] focus:ring-offset-2",
+                "bg-[#1a1a1a] text-white",
+                "hover:bg-[#2a2a2a] hover:shadow-lg hover:scale-[1.02]",
+                "focus:outline-none focus:ring-2 focus:ring-[#1a1a1a] focus:ring-offset-2",
                 "disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100",
                 "flex items-center justify-center gap-2"
               )}

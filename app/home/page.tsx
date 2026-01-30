@@ -16,6 +16,7 @@ import {
   BookOpen,
   AlertTriangle,
 } from "lucide-react";
+import { AISearchHero } from "@/components/home/AISearchHero";
 
 export default function HomePage() {
   const licenseStats = getLicenseStats();
@@ -106,6 +107,9 @@ export default function HomePage() {
 
       {/* Main Content */}
       <main className="px-6 py-8 max-w-7xl mx-auto">
+        {/* AI Search Hero */}
+        <AISearchHero />
+
         {/* Module Cards */}
         <section className="mb-10">
           <h2 className="text-lg font-display font-semibold text-[var(--foreground)] mb-4">
@@ -251,7 +255,7 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-            <button className="w-full mt-4 py-2 text-sm text-[#E21A23] hover:bg-[#E21A23]/10 rounded-lg transition-colors">
+            <button className="w-full mt-4 py-2 text-sm text-[var(--foreground)] hover:bg-[var(--muted)] rounded-lg transition-colors">
               View all activity
             </button>
           </div>
