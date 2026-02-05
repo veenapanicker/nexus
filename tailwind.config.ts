@@ -44,6 +44,23 @@ export default {
             dark: "#6B3B84",
             light: "#9B6BB4",
           },
+          green: {
+            DEFAULT: "#10B981",
+            dark: "#059669",
+            light: "#6EE7B7",
+          },
+        },
+        // Button colors
+        button: {
+          navy: {
+            DEFAULT: "#1E3A8A",
+            hover: "#1E40AF",
+            light: "#93C5FD",
+          },
+          border: {
+            DEFAULT: "#E5E7EB",
+            hover: "#1E3A8A",
+          },
         },
       },
       animation: {

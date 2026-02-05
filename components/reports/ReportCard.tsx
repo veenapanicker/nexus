@@ -1,6 +1,7 @@
 "use client";
 
 import { Report, getProductColor, getProductBorderColor } from "@/lib/mock-data";
+import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { FileText, Calendar, PlayCircle, Clock } from "lucide-react";
@@ -16,7 +17,7 @@ export function ReportCard({ report, onGenerate, onSchedule }: ReportCardProps) 
     <div
       className={cn(
         "bg-[var(--card)] rounded-xl border border-[var(--border)] p-5 hover:shadow-lg transition-all duration-300 group",
-        "hover:border-[var(--foreground)]/20 hover:shadow-lg cursor-pointer transform hover:scale-105"
+        "hover:border-[var(--foreground)]/20"
       )}
     >
       <div className="flex items-start justify-between gap-4">
@@ -62,29 +63,24 @@ export function ReportCard({ report, onGenerate, onSchedule }: ReportCardProps) 
       </div>
 
       <div className="flex items-center gap-2 mt-4 pt-4 border-t border-[var(--border)]">
-        <button
+        <Button
+          variant="primary"
+          size="md"
+          className="flex-1"
           onClick={() => onGenerate(report)}
-          className={cn(
-            "flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
-            "bg-[#60A5FA] text-white hover:bg-[#3B82F6] hover:shadow-lg hover:scale-105",
-            "focus:outline-none focus:ring-2 focus:ring-[#60A5FA] focus:ring-offset-2 active:scale-95"
-          )}
+          leftIcon={<PlayCircle className="h-4 w-4" />}
         >
-          <PlayCircle className="h-4 w-4 transition-transform group-hover:scale-110" />
           Generate Now
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="secondary"
+          size="md"
+          className="flex-1"
           onClick={() => onSchedule(report)}
-          className={cn(
-            "flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
-            "border border-[var(--border)] text-[var(--foreground)]",
-            "hover:bg-[var(--muted)] hover:border-[var(--foreground)]/20 hover:shadow-lg hover:scale-105",
-            "focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/30 focus:ring-offset-2 active:scale-95"
-          )}
+          leftIcon={<Calendar className="h-4 w-4" />}
         >
-          <Calendar className="h-4 w-4 transition-transform group-hover:scale-110" />
           Schedule
-        </button>
+        </Button>
       </div>
     </div>
   );

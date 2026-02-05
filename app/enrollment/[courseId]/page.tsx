@@ -10,6 +10,7 @@ import {
   currentUser,
   type Product,
 } from "@/lib/mock-data";
+import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { format, differenceInDays } from "date-fns";
 import {
@@ -29,8 +30,8 @@ import {
 const productColors: Record<Product, { bg: string; text: string; border: string }> = {
   Connect: { bg: "bg-[#4A3B8A]", text: "text-white", border: "border-[#4A3B8A]" },
   ALEKS: { bg: "bg-[#E21A23]", text: "text-white", border: "border-[#E21A23]" },
-  SimNet: { bg: "bg-[#7B4B94]", text: "text-white", border: "border-[#7B4B94]" },
-  SIMnet: { bg: "bg-[#7B4B94]", text: "text-white", border: "border-[#7B4B94]" },
+  SIMnet: { bg: "bg-[#10B981]", text: "text-white", border: "border-[#10B981]" },
+  SIMnet: { bg: "bg-[#10B981]", text: "text-white", border: "border-[#10B981]" },
   Sharpen: { bg: "bg-[#F8B4D9]", text: "text-[#4A3B8A]", border: "border-[#F8B4D9]" },
 };
 
@@ -364,9 +365,9 @@ export default function CourseDetailsPage() {
               >
                 Previous
               </button>
-              <button className="px-3 py-1.5 rounded-lg text-sm bg-[#60A5FA] text-white">
+              <Button variant="primary" size="sm">
                 1
-              </button>
+              </Button>
               <button className="px-3 py-1.5 rounded-lg text-sm border border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]">
                 Next Page
               </button>

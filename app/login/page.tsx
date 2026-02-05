@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { Eye, EyeOff, Loader2 } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -164,27 +164,16 @@ export default function LoginPage() {
               </a>
             </div>
 
-            <button
+            <Button
+              variant="primary"
+              size="lg"
+              fullWidth
               type="submit"
               disabled={isLoading}
-              className={cn(
-                "w-full py-3 rounded-lg text-sm font-medium transition-all duration-200",
-                "bg-[#60A5FA] text-white",
-                "hover:bg-[#3B82F6] hover:shadow-lg hover:scale-[1.02]",
-                "focus:outline-none focus:ring-2 focus:ring-[#60A5FA] focus:ring-offset-2",
-                "disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100",
-                "flex items-center justify-center gap-2"
-              )}
+              isLoading={isLoading}
             >
-              {isLoading ? (
-                <>
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                  Signing in...
-                </>
-              ) : (
-                "Sign in"
-              )}
-            </button>
+              Sign in
+            </Button>
           </form>
 
           <div className="mt-8 text-center">

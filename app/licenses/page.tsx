@@ -11,6 +11,7 @@ import {
   type Product,
   type LicenseStatus,
 } from "@/lib/mock-data";
+import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import {
@@ -34,8 +35,8 @@ import { AddLicenseModal } from "@/components/licenses/AddLicenseModal";
 const productColors: Record<Product, { bg: string; text: string; border: string }> = {
   Connect: { bg: "bg-[#4A3B8A]", text: "text-white", border: "border-[#4A3B8A]" },
   ALEKS: { bg: "bg-[#E21A23]", text: "text-white", border: "border-[#E21A23]" },
-  SimNet: { bg: "bg-[#7B4B94]", text: "text-white", border: "border-[#7B4B94]" },
-  SIMnet: { bg: "bg-[#7B4B94]", text: "text-white", border: "border-[#7B4B94]" },
+  SIMnet: { bg: "bg-[#10B981]", text: "text-white", border: "border-[#10B981]" },
+  SIMnet: { bg: "bg-[#10B981]", text: "text-white", border: "border-[#10B981]" },
   Sharpen: { bg: "bg-[#F8B4D9]", text: "text-[#4A3B8A]", border: "border-[#F8B4D9]" },
 };
 
@@ -96,13 +97,13 @@ export default function LicensesPage() {
                     <Upload className="h-4 w-4" />
                     Bulk Import
                   </button>
-                  <button
+                  <Button
+                    variant="primary"
                     onClick={() => setShowAddModal(true)}
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#60A5FA] text-white text-sm font-medium hover:bg-[#3B82F6] transition-colors"
+                    leftIcon={<Plus className="h-4 w-4" />}
                   >
-                    <Plus className="h-4 w-4" />
                     Add License
-                  </button>
+                  </Button>
                 </>
               )}
             </div>
@@ -258,7 +259,7 @@ export default function LicensesPage() {
                     <option value="all">All Products</option>
                     <option value="Connect">Connect</option>
                     <option value="ALEKS">ALEKS</option>
-                    <option value="SimNet">SimNet</option>
+                    <option value="SIMnet">SIMnet</option>
                     <option value="Sharpen">Sharpen</option>
                   </select>
                   <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--muted-foreground)] pointer-events-none" />
@@ -393,9 +394,9 @@ export default function LicensesPage() {
               >
                 Previous
               </button>
-              <button className="px-3 py-1.5 rounded-lg text-sm bg-[#60A5FA] text-white">
+              <Button variant="primary" size="sm">
                 1
-              </button>
+              </Button>
               <button className="px-3 py-1.5 rounded-lg text-sm border border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]">
                 Next
               </button>

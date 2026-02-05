@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Modal } from "@/components/ui/Modal";
+import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import {
@@ -227,12 +228,9 @@ export function EnrollmentActionsModal({
           </div>
 
           <div className="mt-6 flex justify-end">
-            <button
-              onClick={() => setShowHistory(false)}
-              className="px-4 py-2 rounded-lg border border-[var(--border)] text-[var(--foreground)] text-sm hover:bg-[var(--muted)] transition-colors"
-            >
+            <Button variant="secondary" onClick={() => setShowHistory(false)}>
               Close
-            </button>
+            </Button>
           </div>
         </div>
       ) : syncState === "syncing" ? (
@@ -338,34 +336,27 @@ export function EnrollmentActionsModal({
           </div>
 
           <div className="flex items-center gap-3 mb-6">
-            <button className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--border)] text-[var(--foreground)] text-sm hover:bg-[var(--muted)] transition-colors">
-              <Download className="h-4 w-4" />
+            <Button variant="secondary" leftIcon={<Download className="h-4 w-4" />}>
               Download Sync Report
-            </button>
-            <button
-              onClick={() => setShowHistory(true)}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg text-[var(--muted-foreground)] text-sm hover:bg-[var(--muted)] transition-colors"
-            >
+            </Button>
+            <Button variant="tertiary" onClick={() => setShowHistory(true)}>
               View History
-            </button>
+            </Button>
           </div>
 
           <div className="flex items-center justify-end gap-3 pt-4 border-t border-[var(--border)]">
-            <button
+            <Button
+              variant="secondary"
               onClick={() => {
                 setSyncState("idle");
                 onClose();
               }}
-              className="px-4 py-2 rounded-lg border border-[var(--border)] text-[var(--foreground)] text-sm hover:bg-[var(--muted)] transition-colors"
             >
               View Dashboard
-            </button>
-            <button
-              onClick={onClose}
-              className="px-4 py-2 rounded-lg bg-[#60A5FA] text-white text-sm font-medium hover:bg-[#3B82F6] transition-colors"
-            >
+            </Button>
+            <Button variant="primary" onClick={onClose}>
               Done
-            </button>
+            </Button>
           </div>
         </div>
       ) : (
@@ -411,7 +402,7 @@ export function EnrollmentActionsModal({
                   LMS: <span className="font-medium text-[var(--foreground)]">{lmsSyncInfo.lmsName}</span>
                 </p>
                 <p className="text-sm text-[var(--muted-foreground)]">
-                  Institution: <span className="font-medium text-[var(--foreground)]">King Saud University</span>
+                  Institution: <span className="font-medium text-[var(--foreground)]">State University</span>
                 </p>
               </div>
 
@@ -451,18 +442,12 @@ export function EnrollmentActionsModal({
               </div>
 
               <div className="flex items-center justify-end gap-3 mt-6 pt-4 border-t border-[var(--border)]">
-                <button
-                  onClick={onClose}
-                  className="px-4 py-2 rounded-lg border border-[var(--border)] text-[var(--foreground)] text-sm hover:bg-[var(--muted)] transition-colors"
-                >
+                <Button variant="secondary" onClick={onClose}>
                   Cancel
-                </button>
-                <button
-                  onClick={handleStartSync}
-                  className="px-4 py-2 rounded-lg bg-[#60A5FA] text-white text-sm font-medium hover:bg-[#3B82F6] transition-colors"
-                >
+                </Button>
+                <Button variant="primary" onClick={handleStartSync}>
                   Start Sync Now
-                </button>
+                </Button>
               </div>
             </div>
           )}
@@ -499,7 +484,7 @@ export function EnrollmentActionsModal({
                       <div>
                         <span className="text-sm text-[var(--foreground)]">By product:</span>
                         <div className="flex items-center gap-4 mt-2">
-                          {["Connect", "ALEKS", "SimNet"].map((product) => (
+                          {["Connect", "ALEKS", "SIMnet"].map((product) => (
                             <label key={product} className="flex items-center gap-2 cursor-pointer">
                               <input
                                 type="checkbox"
@@ -604,18 +589,12 @@ export function EnrollmentActionsModal({
               </div>
 
               <div className="flex items-center justify-end gap-3 mt-6 pt-4 border-t border-[var(--border)]">
-                <button
-                  onClick={onClose}
-                  className="px-4 py-2 rounded-lg border border-[var(--border)] text-[var(--foreground)] text-sm hover:bg-[var(--muted)] transition-colors"
-                >
+                <Button variant="secondary" onClick={onClose}>
                   Cancel
-                </button>
-                <button
-                  onClick={handleExport}
-                  className="px-4 py-2 rounded-lg bg-[#60A5FA] text-white text-sm font-medium hover:bg-[#3B82F6] transition-colors"
-                >
+                </Button>
+                <Button variant="primary" onClick={handleExport}>
                   Generate Export
-                </button>
+                </Button>
               </div>
             </div>
           )}

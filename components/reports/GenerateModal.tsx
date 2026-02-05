@@ -2,12 +2,13 @@
 
 import React, { useState } from "react";
 import { Modal } from "@/components/ui/Modal";
+import { Button } from "@/components/ui/Button";
 import { Report, ReportFormat, getProductColor } from "@/lib/mock-data";
 import { useReports } from "@/lib/context";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { toast } from "sonner";
-import { FileSpreadsheet, FileText, Files, Loader2, CheckCircle2 } from "lucide-react";
+import { FileSpreadsheet, FileText, Files, CheckCircle2 } from "lucide-react";
 import { ProgressBar } from "@/components/ui/LoadingSkeleton";
 
 interface GenerateModalProps {
@@ -217,39 +218,12 @@ export function GenerateModal({ report, isOpen, onClose }: GenerateModalProps) {
 
           {/* Actions */}
           <div className="flex justify-end gap-3 pt-4 border-t border-[var(--border)]">
-            <button
-              onClick={onClose}
-              disabled={isGenerating}
-              className={cn(
-                "px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200",
-                "border border-[var(--border)] text-[var(--foreground)]",
-                "hover:bg-[var(--muted)] hover:border-[#E21A23]/30",
-                "disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
-              )}
-            >
+            <Button variant="secondary" onClick={onClose} disabled={isGenerating}>
               Cancel
-            </button>
-            <button
-              onClick={handleGenerate}
-              disabled={isGenerating}
-              className={cn(
-                "px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200",
-                "bg-[#60A5FA] text-white",
-                "hover:bg-[#3B82F6] hover:shadow-lg hover:scale-105",
-                "disabled:opacity-50 disabled:cursor-not-allowed",
-                "focus:outline-none focus:ring-2 focus:ring-[#60A5FA] focus:ring-offset-2",
-                "flex items-center gap-2 active:scale-95"
-              )}
-            >
-              {isGenerating ? (
-                <>
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                  Generating...
-                </>
-              ) : (
-                "Generate Report"
-              )}
-            </button>
+            </Button>
+            <Button variant="primary" onClick={handleGenerate} disabled={isGenerating} isLoading={isGenerating}>
+              Generate Report
+            </Button>
           </div>
         </>
       )}

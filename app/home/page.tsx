@@ -59,7 +59,7 @@ export default function HomePage() {
       icon: GraduationCap,
       href: "/enrollment",
       access: currentUser.permissions.enrollment,
-      color: "from-[#7B4B94] to-[#9B6BB4]",
+      color: "from-[#10B981] to-[#9B6BB4]",
       stats: [
         { label: "Total Students", value: enrollmentStats.totalStudents.toLocaleString() },
         { label: "Active Courses", value: enrollmentStats.activeCourses },
@@ -122,7 +122,7 @@ export default function HomePage() {
                 href={module.href}
                 className={cn(
                   "group relative bg-[var(--card)] rounded-2xl border border-[var(--border)] p-6 transition-all duration-300",
-                  "hover:shadow-lg hover:border-[#E21A23]/30 hover:scale-[1.02]",
+                  "hover:shadow-lg hover:border-[#E21A23]/30",
                   "animate-slideUp"
                 )}
                 style={{ animationDelay: `${idx * 100}ms` }}
@@ -219,7 +219,7 @@ export default function HomePage() {
               </div>
               <div className="p-4 rounded-xl bg-[var(--muted)]">
                 <div className="flex items-center gap-2 mb-2">
-                  <FileText className="h-4 w-4 text-[#7B4B94]" />
+                  <FileText className="h-4 w-4 text-[#10B981]" />
                   <span className="text-xs text-[var(--muted-foreground)]">Reports Generated</span>
                 </div>
                 <p className="text-2xl font-bold text-[var(--foreground)]">{generatedReports.length}</p>

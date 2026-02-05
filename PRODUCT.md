@@ -25,14 +25,14 @@ Nexus manages four McGraw Hill educational products:
 
 1. **Connect** - Digital learning platform for course materials and assignments
 2. **ALEKS** - Adaptive learning and assessment system for math and science
-3. **SimNet** - Simulation-based learning for Microsoft Office applications
+3. **SIMnet** - Simulation-based learning for Microsoft Office applications
 4. **Sharpen** - Study and practice tool for exam preparation
 
 ---
 
 ## Core Features
 
-### 1. Reports Hub (Home Page)
+### 1. Reporting Hub (Home Page)
 
 The central command center for accessing and managing reports across all products.
 

@@ -14,7 +14,7 @@ interface ReportFiltersProps {
   categories: string[];
 }
 
-const products: (Product | "all")[] = ["all", "Connect", "ALEKS", "SimNet", "Sharpen"];
+const products: (Product | "all")[] = ["all", "Connect", "ALEKS", "SIMnet", "Sharpen"];
 
 export function ReportFilters({
   searchQuery,

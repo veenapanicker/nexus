@@ -10,6 +10,7 @@ import {
   currentUser,
   type Product,
 } from "@/lib/mock-data";
+import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { format, formatDistanceToNow } from "date-fns";
 import {
@@ -33,8 +34,7 @@ import { EnrollmentActionsModal } from "@/components/enrollment/EnrollmentAction
 const productColors: Record<Product, { bg: string; text: string; border: string; icon: string }> = {
   Connect: { bg: "bg-[#4A3B8A]", text: "text-white", border: "border-[#4A3B8A]", icon: "bg-[#4A3B8A]/10 text-[#4A3B8A]" },
   ALEKS: { bg: "bg-[#E21A23]", text: "text-white", border: "border-[#E21A23]", icon: "bg-[#E21A23]/10 text-[#E21A23]" },
-  SimNet: { bg: "bg-[#7B4B94]", text: "text-white", border: "border-[#7B4B94]", icon: "bg-[#7B4B94]/10 text-[#7B4B94]" },
-  SIMnet: { bg: "bg-[#7B4B94]", text: "text-white", border: "border-[#7B4B94]", icon: "bg-[#7B4B94]/10 text-[#7B4B94]" },
+  SIMnet: { bg: "bg-[#10B981]", text: "text-white", border: "border-[#10B981]", icon: "bg-[#10B981]/10 text-[#10B981]" },
   Sharpen: { bg: "bg-[#F8B4D9]", text: "text-[#4A3B8A]", border: "border-[#F8B4D9]", icon: "bg-[#F8B4D9]/20 text-[#4A3B8A]" },
 };
 
@@ -92,7 +92,7 @@ export default function EnrollmentPage() {
                     Enrollment Data
                   </h1>
                   <p className="text-sm text-[var(--muted-foreground)]">
-                    Institution: King Saud University
+                    Institution: State University
                   </p>
                 </div>
               </div>
@@ -138,13 +138,13 @@ export default function EnrollmentPage() {
           </div>
           <div className="flex items-center justify-between mt-4 pt-4 border-t border-[var(--border)]">
             <div className="flex items-center gap-3">
-              <button
+              <Button
+                variant="primary"
                 onClick={openSyncModal}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#60A5FA] text-white text-sm font-medium hover:bg-[#3B82F6] transition-colors"
+                leftIcon={<RefreshCw className="h-4 w-4" />}
               >
-                <RefreshCw className="h-4 w-4" />
                 Sync Now
-              </button>
+              </Button>
               <button
                 onClick={openSyncModal}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--border)] text-[var(--foreground)] text-sm hover:bg-[var(--muted)] transition-colors"
@@ -202,10 +202,10 @@ export default function EnrollmentPage() {
               <span className="text-xs text-[var(--muted-foreground)]">({stats.byProduct.ALEKS.percentage}%)</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className={cn("w-3 h-3 rounded-full", productColors.SimNet.bg)} />
-              <span className="text-sm text-[var(--muted-foreground)]">SimNet:</span>
-              <span className="text-sm font-medium text-[var(--foreground)]">{stats.byProduct.SimNet.count.toLocaleString()}</span>
-              <span className="text-xs text-[var(--muted-foreground)]">({stats.byProduct.SimNet.percentage}%)</span>
+              <span className={cn("w-3 h-3 rounded-full", productColors.SIMnet.bg)} />
+              <span className="text-sm text-[var(--muted-foreground)]">SIMnet:</span>
+              <span className="text-sm font-medium text-[var(--foreground)]">{stats.byProduct.SIMnet.count.toLocaleString()}</span>
+              <span className="text-xs text-[var(--muted-foreground)]">({stats.byProduct.SIMnet.percentage}%)</span>
             </div>
           </div>
         </div>
@@ -263,7 +263,7 @@ export default function EnrollmentPage() {
                       <option value="all">All Products</option>
                       <option value="Connect">Connect</option>
                       <option value="ALEKS">ALEKS</option>
-                      <option value="SimNet">SimNet</option>
+                      <option value="SIMnet">SIMnet</option>
                     </select>
                     <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--muted-foreground)] pointer-events-none" />
                   </div>
@@ -370,9 +370,9 @@ export default function EnrollmentPage() {
                 >
                   Previous
                 </button>
-                <button className="px-3 py-1.5 rounded-lg text-sm bg-[#60A5FA] text-white">
+                <Button variant="primary" size="sm">
                   1
-                </button>
+                </Button>
                 <button className="px-3 py-1.5 rounded-lg text-sm border border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]">
                   Next Page
                 </button>
@@ -390,7 +390,7 @@ export default function EnrollmentPage() {
               const productIcons: Record<string, string> = {
                 Connect: "text-[#4A3B8A]",
                 ALEKS: "text-[#E21A23]",
-                SimNet: "text-[#7B4B94]",
+                SIMnet: "text-[#10B981]",
               };
 
               return (

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Modal } from "@/components/ui/Modal";
+import { Button } from "@/components/ui/Button";
 import { Report, ReportFormat, Frequency, DeliveryMethod, getProductColor } from "@/lib/mock-data";
 import { useReports } from "@/lib/context";
 import { cn } from "@/lib/utils";
@@ -260,29 +261,12 @@ export function ScheduleModal({ report, isOpen, onClose }: ScheduleModalProps) {
 
           {/* Actions */}
           <div className="flex justify-end gap-3 pt-4 border-t border-[var(--border)]">
-            <button
-              onClick={onClose}
-              className={cn(
-                "px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200",
-                "border border-[var(--border)] text-[var(--foreground)]",
-                "hover:bg-[var(--muted)] hover:border-[#E21A23]/30",
-                "active:scale-95"
-              )}
-            >
+            <Button variant="secondary" onClick={onClose}>
               Cancel
-            </button>
-            <button
-              onClick={handleSchedule}
-              className={cn(
-                "px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200",
-                "bg-[#60A5FA] text-white",
-                "hover:bg-[#3B82F6] hover:shadow-lg hover:scale-105",
-                "focus:outline-none focus:ring-2 focus:ring-[#60A5FA] focus:ring-offset-2",
-                "active:scale-95"
-              )}
-            >
+            </Button>
+            <Button variant="primary" onClick={handleSchedule}>
               Create Schedule
-            </button>
+            </Button>
           </div>
         </>
       )}

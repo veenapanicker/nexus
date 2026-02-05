@@ -1,4 +1,4 @@
-export type Product = "Connect" | "ALEKS" | "SimNet" | "SIMnet" | "Sharpen";
+export type Product = "Connect" | "ALEKS" | "SIMnet" | "SIMnet" | "Sharpen";
 
 export type ReportFormat = "csv" | "xlsx" | "both";
 
@@ -129,12 +129,12 @@ export const reports: Report[] = [
     availableFormats: ["csv", "xlsx", "both"],
     category: "Assessment",
   },
-  // SimNet Reports
+  // SIMnet Reports
   {
     id: "simnet-skills",
     name: "Skills Assessment Summary",
-    description: "Overview of student performance on SimNet skills assessments across Microsoft Office applications.",
-    product: "SimNet",
+    description: "Overview of student performance on SIMnet skills assessments across Microsoft Office applications.",
+    product: "SIMnet",
     lastGenerated: new Date("2026-01-23"),
     availableFormats: ["csv", "xlsx", "both"],
     category: "Assessment",
@@ -143,7 +143,7 @@ export const reports: Report[] = [
     id: "simnet-certification",
     name: "Certification Readiness",
     description: "Student readiness metrics for Microsoft Office Specialist certification exams.",
-    product: "SimNet",
+    product: "SIMnet",
     lastGenerated: new Date("2026-01-15"),
     availableFormats: ["csv", "xlsx", "both"],
     category: "Assessment",
@@ -152,7 +152,7 @@ export const reports: Report[] = [
     id: "simnet-project",
     name: "Project Completion Report",
     description: "Detailed project completion data with skill-by-skill breakdown and common error analysis.",
-    product: "SimNet",
+    product: "SIMnet",
     lastGenerated: new Date("2026-01-20"),
     availableFormats: ["csv", "xlsx", "both"],
     category: "Performance",
@@ -224,7 +224,7 @@ export const scheduledReports: ScheduledReport[] = [
     id: "sched-4",
     reportId: "simnet-skills",
     reportName: "Skills Assessment Summary",
-    product: "SimNet",
+    product: "SIMnet",
     frequency: "weekly",
     dayOfWeek: 3, // Wednesday
     format: "xlsx",
@@ -321,7 +321,7 @@ export const generatedReports: GeneratedReport[] = [
     id: "gen-7",
     reportId: "simnet-skills",
     reportName: "Skills Assessment Summary",
-    product: "SimNet",
+    product: "SIMnet",
     generatedAt: new Date("2026-01-23T08:45:00"),
     format: "xlsx",
     fileSize: "1.5 MB",
@@ -365,7 +365,7 @@ export const generatedReports: GeneratedReport[] = [
     id: "gen-11",
     reportId: "simnet-project",
     reportName: "Project Completion Report",
-    product: "SimNet",
+    product: "SIMnet",
     generatedAt: new Date("2026-01-20T12:00:00"),
     format: "xlsx",
     fileSize: "2.7 MB",
@@ -390,8 +390,7 @@ export function getProductColor(product: Product): string {
   const colors: Record<Product, string> = {
     Connect: "bg-nexus-purple text-white",
     ALEKS: "bg-nexus-red text-white",
-    SimNet: "bg-nexus-violet text-white",
-    SIMnet: "bg-nexus-violet text-white",
+    SIMnet: "bg-nexus-green text-white",
     Sharpen: "bg-nexus-pink text-nexus-purple-dark",
   };
   return colors[product] || "bg-gray-500 text-white";
@@ -401,8 +400,7 @@ export function getProductBorderColor(product: Product): string {
   const colors: Record<Product, string> = {
     Connect: "border-nexus-purple",
     ALEKS: "border-nexus-red",
-    SimNet: "border-nexus-violet",
-    SIMnet: "border-nexus-violet",
+    SIMnet: "border-nexus-green",
     Sharpen: "border-nexus-pink",
   };
   return colors[product] || "border-gray-500";
@@ -538,7 +536,7 @@ export const licenses: License[] = [
   },
   {
     id: "lic-3",
-    product: "SimNet",
+    product: "SIMnet",
     totalSeats: 150,
     usedSeats: 142,
     availableSeats: 8,
@@ -601,7 +599,7 @@ export const studentLicenses: StudentLicense[] = [
     studentId: "STU-10237",
     studentName: "James Williams",
     studentEmail: "jwilliams@stateuniversity.edu",
-    product: "SimNet",
+    product: "SIMnet",
     assignedDate: new Date("2025-09-01"),
     expirationDate: new Date("2026-02-28"),
     status: "expiring_soon",
@@ -746,7 +744,7 @@ export const courses: Course[] = [
     id: "course-4",
     name: "Computer Applications",
     code: "CIS 110",
-    product: "SimNet",
+    product: "SIMnet",
     instructor: "Prof. Mark Davis",
     department: "Computer Science",
     term: "Spring 2026",
@@ -872,7 +870,7 @@ export const studentEnrollments: StudentEnrollment[] = [
     courseId: "course-4",
     courseName: "Computer Applications",
     courseCode: "CIS 110",
-    product: "SimNet",
+    product: "SIMnet",
     enrollmentDate: new Date("2025-09-01"),
     status: "active",
     grade: "A",
@@ -1101,7 +1099,7 @@ export const enrollmentByProduct: EnrollmentByProduct[] = [
     ],
   },
   {
-    product: "SimNet",
+    product: "SIMnet",
     totalStudents: 178,
     activeStudents: 143,
     activePercentage: 80,
@@ -1197,7 +1195,7 @@ export const enrollmentCourses: EnrollmentCourse[] = [
     id: "enc-7",
     name: "Computer Skills",
     code: "CIS 100",
-    product: "SimNet",
+    product: "SIMnet",
     instructor: "Prof. Mark Davis",
     term: "Spring 2026",
     enrolledCount: 118,
@@ -1249,7 +1247,7 @@ export function getEnrollmentDashboardStats() {
     byProduct: {
       Connect: { count: connectStudents, percentage: Math.round((connectStudents / totalStudents) * 100) },
       ALEKS: { count: aleksStudents, percentage: Math.round((aleksStudents / totalStudents) * 100) },
-      SimNet: { count: simnetStudents, percentage: Math.round((simnetStudents / totalStudents) * 100) },
+      SIMnet: { count: simnetStudents, percentage: Math.round((simnetStudents / totalStudents) * 100) },
     },
   };
 }

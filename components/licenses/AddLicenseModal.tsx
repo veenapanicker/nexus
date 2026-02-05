@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import { Modal } from "@/components/ui/Modal";
+import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { X, Upload, User, Users, Check, Loader2, FileSpreadsheet, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
@@ -215,7 +217,7 @@ export function AddLicenseModal({ open, onClose }: AddLicenseModalProps) {
                     >
                       <option value="Connect">Connect (77 available)</option>
                       <option value="ALEKS">ALEKS (13 available)</option>
-                      <option value="SimNet">SimNet (8 available)</option>
+                      <option value="SIMnet">SIMnet (8 available)</option>
                       <option value="Sharpen">Sharpen (44 available)</option>
                     </select>
                   </div>
@@ -238,25 +240,15 @@ export function AddLicenseModal({ open, onClose }: AddLicenseModalProps) {
                     </select>
                   </div>
 
-                  <button
+                  <Button
+                    variant="primary"
+                    fullWidth
                     type="submit"
-                    disabled={isSubmitting || !studentEmail || !studentName}
-                    className={cn(
-                      "w-full py-3 rounded-lg text-sm font-medium transition-all",
-                      "bg-[#60A5FA] text-white hover:bg-[#3B82F6]",
-                      "disabled:opacity-50 disabled:cursor-not-allowed",
-                      "flex items-center justify-center gap-2"
-                    )}
+                    disabled={!studentEmail || !studentName}
+                    isLoading={isSubmitting}
                   >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                        Assigning License...
-                      </>
-                    ) : (
-                      "Assign License"
-                    )}
-                  </button>
+                    Assign License
+                  </Button>
                 </form>
               ) : (
                 <div className="space-y-4">
@@ -336,25 +328,15 @@ export function AddLicenseModal({ open, onClose }: AddLicenseModalProps) {
                         </div>
                       )}
 
-                      <button
+                      <Button
+                        variant="primary"
+                        fullWidth
                         onClick={handleBulkUpload}
                         disabled={isSubmitting}
-                        className={cn(
-                          "w-full py-3 rounded-lg text-sm font-medium transition-all",
-                          "bg-[#60A5FA] text-white hover:bg-[#3B82F6]",
-                          "disabled:opacity-50 disabled:cursor-not-allowed",
-                          "flex items-center justify-center gap-2"
-                        )}
+                        isLoading={isSubmitting}
                       >
-                        {isSubmitting ? (
-                          <>
-                            <Loader2 className="h-4 w-4 animate-spin" />
-                            Processing Import...
-                          </>
-                        ) : (
-                          `Import ${previewData?.count || 0} Licenses`
-                        )}
-                      </button>
+                        Import {previewData?.count || 0} Licenses
+                      </Button>
                     </div>
                   )}
 

@@ -33,6 +33,7 @@ npm run start    # Start production server
 - `lib/context.tsx` - ReportProvider with global state for reports, scheduled reports, generated reports
 - `lib/mock-data.ts` - Type definitions and mock data (all data is mocked, no backend)
 - `lib/utils.ts` - `cn()` utility for merging Tailwind classes
+- `lib/design-tokens.ts` - Centralized design tokens for colors, spacing, and button sizes
 
 ### State Management
 Global state via React Context (`useReports()` hook):
@@ -44,25 +45,76 @@ Global state via React Context (`useReports()` hook):
 
 **CSS Variables** (defined in `globals.css`):
 - `--background`, `--foreground`, `--card`, `--border`, `--muted`, `--muted-foreground`
-- Supports light/dark mode via `prefers-color-scheme`
+- Light mode only (dark mode completely removed)
 
-**McGraw Hill Brand Colors**:
+**McGraw Hill Brand Colors** (via tailwind.config.ts):
 - Red: `#E21A23` (reserved for brand accents only, NOT buttons)
 - Connect Purple: `#4A3B8A`
-- SimNet Violet: `#7B4B94`
+- SIMnet Green: `#10B981` (changed from violet)
 - Sharpen Pink: `#F08080`
 - ALEKS: Uses MH Red `#E21A23`
 
-**Button Colors**:
-- Primary buttons: `bg-[#60A5FA]` (light blue) with `hover:bg-[#3B82F6]`
-- Secondary buttons: `border border-[var(--border)]` with hover states
-- Red is reserved for brand accents (header strip, product tags), not interactive elements
+**Button System** (NEW):
+Import `Button` from `@/components/ui/Button`:
+```tsx
+<Button variant="primary" size="md" isLoading={false}>
+  Action
+</Button>
+```
+
+**Button Variants**:
+- `primary`: Navy blue (`#1E3A8A`) - main actions
+- `secondary`: Border + navy on hover - alternative actions
+- `tertiary`: Text only - low-priority actions
+- `warning`: Amber (`#F59E0B`) - caution actions
+- `negative`: Red (`#EF4444`) - destructive actions
+- `positive`: Green (`#10B981`) - success states
+
+**Button Sizes**:
+- `sm`: `px-3 py-1.5 text-sm`
+- `md`: `px-4 py-2 text-sm` (default)
+- `lg`: `px-6 py-2.5 text-base`
+
+**Button Features**:
+- `isLoading`: Shows spinner, disables button
+- `leftIcon` / `rightIcon`: Icon support with auto spacing
+- `fullWidth`: Stretch to container width
+- `asChild`: Render as child (e.g., `<Link>` wrapper)
+- No scale animations (uses subtle shadows instead)
+
+**Design Tokens** (via `lib/design-tokens.ts`):
+- Centralized color definitions with states (rest, hover, active, disabled)
+- Transition timing: 200ms cubic-bezier(0.4, 0, 0.2, 1)
+- Focus ring: Blue (`#3B82F6`) for accessibility
+
+**Heading Component** (NEW):
+Import `Heading` from `@/components/ui/Heading`:
+```tsx
+<Heading as="h1" className="mb-4">
+  Page Title
+</Heading>
+```
 
 **Typography**:
-- Display font: Poppins (headings)
+- Display font: Poppins (headings, via `font-display`)
 - Body font: Source Sans Pro
+- Focus ring color: Blue (`#3B82F6`, not red)
+- Scrollbar gradient: Neutral gray (not red)
 
 ### Component Patterns
+
+**Button Component**: Always use `<Button>` from `@/components/ui/Button` instead of `<button>` tags:
+```tsx
+<Button variant="primary" size="md" leftIcon={<Icon />} isLoading={false}>
+  Action Text
+</Button>
+```
+
+**Heading Component**: Use `<Heading>` from `@/components/ui/Heading` for consistent typography:
+```tsx
+<Heading as="h1" className="mb-6">Page Title</Heading>
+<Heading as="h2" className="mb-4">Section Title</Heading>
+```
 
 **Modal Pattern**: Use reusable `<Modal>` component with props: `isOpen`, `onClose`, `title`, `size`
 
@@ -76,14 +128,22 @@ cn("base-class", isActive && "active-class")
 style={{ animationDelay: `${index * 100}ms` }}
 ```
 
+**Important**: NO `hover:scale-*` animations anywhere. Button hover effects use color changes and subtle shadows only.
+
 ### Data Models
 Key types in `lib/mock-data.ts`:
-- `Product`: "Connect" | "ALEKS" | "SimNet" | "Sharpen"
+- `Product`: "Connect" | "ALEKS" | "SIMnet" | "Sharpen"
 - `Report`, `ScheduledReport`, `GeneratedReport`
 - `License`, `StudentLicense`
 - `Course`, `StudentEnrollment`
 
-Helper functions: `getProductColor()`, `formatFrequency()`, `getLicenseStats()`, `getEnrollmentStats()`
+Helper functions: `getProductColor()`, `getProductBorderColor()`, `formatFrequency()`, `getLicenseStats()`, `getEnrollmentStats()`
+
+**Product Color Mapping**:
+- Connect: Purple (`#4A3B8A`)
+- ALEKS: Red (`#E21A23`)
+- SIMnet: Green (`#10B981`)
+- Sharpen: Pink (`#F08080`)
 
 ### User Roles
 - `platform_admin`, `institutional_admin`, `billing_admin`

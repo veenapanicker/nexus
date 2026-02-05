@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import {
@@ -53,10 +54,10 @@ const productBranding = {
     icon: "/logos/aleks-icon.svg",
   },
   simnet: {
-    color: "#7B4B94",
-    bg: "bg-[#7B4B94]",
-    bgLight: "bg-[#7B4B94]/8",
-    text: "text-[#7B4B94]",
+    color: "#10B981",
+    bg: "bg-[#10B981]",
+    bgLight: "bg-[#10B981]/8",
+    text: "text-[#10B981]",
     name: "SIMnet",
     icon: "/logos/simnet-icon.svg",
   },
@@ -190,7 +191,7 @@ const getAIResults = (query: string): SearchResult[] => {
         type: "insight",
         icon: Key,
         title: "142 licenses expiring soon",
-        description: "SimNet licenses expire Feb 28, 2026",
+        description: "SIMnet licenses expire Feb 28, 2026",
         link: "/licenses",
         product: "simnet",
       },
@@ -413,7 +414,7 @@ export function AISearchHero() {
       {/* Hero Card */}
       <div className="relative bg-[var(--card)] rounded-3xl border border-[var(--border)] overflow-hidden">
         {/* McGraw Hill Brand Strip - THE ONLY place red appears prominently */}
-        <div className="h-1 bg-gradient-to-r from-[#E21A23] via-[#4A3B8A] to-[#7B4B94]" />
+        <div className="h-1 bg-gradient-to-r from-[#E21A23] via-[#4A3B8A] to-[#10B981]" />
 
         {/* Subtle background texture */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -483,19 +484,15 @@ export function AISearchHero() {
                   <X className="h-5 w-5" />
                 </button>
               )}
-              {/* Primary CTA - Dark charcoal, NOT red */}
-              <button
-                className={cn(
-                  "m-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2",
-                  query
-                    ? "bg-[#60A5FA] text-white hover:bg-[#3B82F6] shadow-md hover:shadow-lg"
-                    : "bg-[var(--muted)] text-[var(--muted-foreground)] cursor-not-allowed"
-                )}
+              {/* Primary CTA */}
+              <Button
+                variant="primary"
                 disabled={!query}
+                leftIcon={<Sparkles className="h-4 w-4" />}
+                className="m-2"
               >
-                <Sparkles className="h-4 w-4" />
                 <span className="hidden sm:inline">Ask</span>
-              </button>
+              </Button>
             </div>
 
             {/* Results Dropdown */}
@@ -562,50 +559,6 @@ export function AISearchHero() {
             )}
           </div>
 
-          {/* Suggested Prompts - Subtle, professional styling */}
-          <div className="mt-6">
-            <p className="text-xs font-medium text-[var(--muted-foreground)] uppercase tracking-wider mb-3">
-              Suggestions
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {suggestedPrompts.map((prompt, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => handlePromptClick(prompt.text)}
-                  className={cn(
-                    "group flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm transition-all duration-150",
-                    "bg-[var(--muted)]/50 text-[var(--muted-foreground)] border border-transparent",
-                    "hover:bg-[var(--muted)] hover:text-[var(--foreground)] hover:border-[var(--border)]"
-                  )}
-                >
-                  <prompt.icon className="h-3.5 w-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />
-                  <span>{prompt.text}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Capabilities - Minimal footer */}
-          <div className="mt-8 pt-5 border-t border-[var(--border)]">
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-[var(--muted-foreground)]">
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                Search all data
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#4A3B8A]" />
-                Natural language
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#7B4B94]" />
-                Quick actions
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-                Help & docs
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </div>

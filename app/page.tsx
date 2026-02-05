@@ -7,6 +7,7 @@ import { ReportCard } from "@/components/reports/ReportCard";
 import { ReportFilters } from "@/components/filters/ReportFilters";
 import { GenerateModal } from "@/components/reports/GenerateModal";
 import { ScheduleModal } from "@/components/reports/ScheduleModal";
+import { Button } from "@/components/ui/Button";
 import { ReportCardGridSkeleton } from "@/components/ui/LoadingSkeleton";
 import { Calendar, Download, FileText } from "lucide-react";
 import Link from "next/link";
@@ -64,7 +65,7 @@ export default function ReportLibraryPage() {
     return groups;
   }, [filteredReports]);
 
-  const productOrder: Product[] = ["Connect", "ALEKS", "SimNet", "Sharpen"];
+  const productOrder: Product[] = ["Connect", "ALEKS", "SIMnet", "Sharpen"];
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
@@ -73,34 +74,30 @@ export default function ReportLibraryPage() {
         <div className="px-6 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-display font-bold text-[var(--foreground)]">EDS Reporting Hub</h1>
+              <h1 className="text-2xl font-display font-bold text-[var(--foreground)]">Reporting Hub</h1>
               <p className="text-sm text-[var(--muted-foreground)] mt-1">
                 Access and manage reports from all McGraw Hill products
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <Link
-                href="/scheduled"
-                className={cn(
-                  "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
-                  "border border-[var(--border)] text-[var(--foreground)]",
-                  "hover:bg-[var(--muted)] hover:border-[var(--foreground)]/20 hover:shadow-lg"
-                )}
+              <Button
+                variant="secondary"
+                asChild
               >
-                <Calendar className="h-4 w-4" />
-                Scheduled ({scheduledReports.length})
-              </Link>
-              <Link
-                href="/downloads"
-                className={cn(
-                  "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
-                  "bg-[#60A5FA] text-white",
-                  "hover:bg-[#3B82F6] hover:shadow-lg hover:scale-105"
-                )}
+                <Link href="/scheduled" className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  Scheduled ({scheduledReports.length})
+                </Link>
+              </Button>
+              <Button
+                variant="primary"
+                asChild
               >
-                <Download className="h-4 w-4" />
-                Downloads ({generatedReports.length})
-              </Link>
+                <Link href="/downloads" className="flex items-center gap-2">
+                  <Download className="h-4 w-4" />
+                  Downloads ({generatedReports.length})
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -113,7 +110,7 @@ export default function ReportLibraryPage() {
           {[
             { icon: FileText, label: "Available Reports", value: reports.length, color: "from-[#E21A23] to-[#F04A52]", bgColor: "#E21A23" },
             { icon: Calendar, label: "Active Schedules", value: scheduledReports.filter((s) => s.isActive).length, color: "from-[#4A3B8A] to-[#6A5BAA]", bgColor: "#4A3B8A" },
-            { icon: Download, label: "Reports Ready", value: generatedReports.length, color: "from-[#7B4B94] to-[#9B6BB4]", bgColor: "#7B4B94" },
+            { icon: Download, label: "Reports Ready", value: generatedReports.length, color: "from-[#10B981] to-[#9B6BB4]", bgColor: "#10B981" },
           ].map((stat, idx) => (
             <div
               key={idx}
@@ -171,7 +168,7 @@ export default function ReportLibraryPage() {
                         "w-3 h-3 rounded-full animate-pulse",
                         product === "Connect" && "bg-[#E21A23]",
                         product === "ALEKS" && "bg-[#E21A23]",
-                        product === "SimNet" && "bg-[#7B4B94]",
+                        product === "SIMnet" && "bg-[#10B981]",
                         product === "Sharpen" && "bg-[#F08080]"
                       )}
                     />

@@ -17,24 +17,11 @@
   --card-foreground: #1a1a1a;
   --border: #e0e0e0;
   --input: #f0f0f0;
-  --ring: #E21A23;
+  --ring: #3B82F6;
   --muted: #f0f0f0;
   --muted-foreground: #666666;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0f0f0f;
-    --foreground: #f5f5f5;
-    --card: #1a1a1a;
-    --card-foreground: #f5f5f5;
-    --border: #2a2a2a;
-    --input: #2a2a2a;
-    --ring: #F04A52;
-    --muted: #252525;
-    --muted-foreground: #a0a0a0;
-  }
-}
 
 html {
   scroll-behavior: smooth;
@@ -70,14 +57,13 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--ring) 0%, #FF6B6B 100%);
+  background: linear-gradient(135deg, #9CA3AF 0%, #6B7280 100%);
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #B8131A 0%, #D63B45 100%);
-  box-shadow: 0 0 10px rgba(226, 26, 35, 0.2);
+  background: linear-gradient(135deg, #6B7280 0%, #4B5563 100%);
 }
 
 /* Smooth animations */
