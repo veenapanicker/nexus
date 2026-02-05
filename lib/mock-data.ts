@@ -1251,3 +1251,175 @@ export function getEnrollmentDashboardStats() {
     },
   };
 }
+
+// ============================================================
+// USER ACCESS MANAGEMENT
+// ============================================================
+
+export interface AdminUser extends User {
+  addedDate: Date;
+  addedBy: string;
+  lastLogin?: Date;
+  status: "active" | "invited" | "suspended";
+  productAccess: {
+    reports: Product[];
+    licenses: Product[];
+    enrollment: Product[];
+  };
+  courseRestrictions?: string[];
+  campusAccess?: string[];
+}
+
+export type RolePreset = "reports_admin" | "licenses_manager" | "enrollment_lead" | "full_admin" | "custom";
+
+export interface RolePresetConfig {
+  id: RolePreset;
+  name: string;
+  description: string;
+  permissions: UserPermissions;
+  defaultProducts: Product[];
+}
+
+export const allProducts: Product[] = ["Connect", "ALEKS", "SIMnet", "Sharpen"];
+
+export const campuses = ["Main Campus", "North Campus", "Downtown Center", "Online Division"];
+
+export const rolePresets: RolePresetConfig[] = [
+  {
+    id: "reports_admin",
+    name: "Reports Administrator",
+    description: "Full access to Reports module only",
+    permissions: { reports: "full", licenses: "none", enrollment: "none" },
+    defaultProducts: ["Connect", "ALEKS", "SIMnet", "Sharpen"],
+  },
+  {
+    id: "licenses_manager",
+    name: "Licenses Manager",
+    description: "Full access to Licenses, view-only Reports",
+    permissions: { reports: "view_only", licenses: "full", enrollment: "none" },
+    defaultProducts: ["Connect", "ALEKS", "SIMnet", "Sharpen"],
+  },
+  {
+    id: "enrollment_lead",
+    name: "Enrollment Lead",
+    description: "Full access to Enrollment, view-only Reports",
+    permissions: { reports: "view_only", licenses: "none", enrollment: "full" },
+    defaultProducts: ["Connect", "ALEKS", "SIMnet"],
+  },
+  {
+    id: "full_admin",
+    name: "Full Administrator",
+    description: "Complete access to all modules and products",
+    permissions: { reports: "full", licenses: "full", enrollment: "full" },
+    defaultProducts: ["Connect", "ALEKS", "SIMnet", "Sharpen"],
+  },
+  {
+    id: "custom",
+    name: "Custom Access",
+    description: "Configure custom permissions after invite",
+    permissions: { reports: "none", licenses: "none", enrollment: "none" },
+    defaultProducts: [],
+  },
+];
+
+export const adminUsers: AdminUser[] = [
+  {
+    id: "user-1",
+    name: "Sarah Chen",
+    email: "schen@stateuniversity.edu",
+    role: "institutional_admin",
+    institution: "State University",
+    permissions: { reports: "full", licenses: "full", enrollment: "full" },
+    addedDate: new Date("2024-08-01"),
+    addedBy: "System",
+    lastLogin: new Date("2026-02-05T09:30:00"),
+    status: "active",
+    productAccess: {
+      reports: ["Connect", "ALEKS", "SIMnet", "Sharpen"],
+      licenses: ["Connect", "ALEKS", "SIMnet", "Sharpen"],
+      enrollment: ["Connect", "ALEKS", "SIMnet", "Sharpen"],
+    },
+  },
+  {
+    id: "user-2",
+    name: "Marcus Williams",
+    email: "mwilliams@stateuniversity.edu",
+    role: "platform_admin",
+    institution: "State University",
+    permissions: { reports: "full", licenses: "view_only", enrollment: "none" },
+    addedDate: new Date("2025-09-15"),
+    addedBy: "Sarah Chen",
+    lastLogin: new Date("2026-02-04T14:22:00"),
+    status: "active",
+    productAccess: {
+      reports: ["Connect", "ALEKS", "SIMnet"],
+      licenses: ["Connect", "ALEKS", "SIMnet"],
+      enrollment: [],
+    },
+  },
+  {
+    id: "user-3",
+    name: "Jennifer Lopez",
+    email: "jlopez@stateuniversity.edu",
+    role: "billing_admin",
+    institution: "State University",
+    permissions: { reports: "view_only", licenses: "full", enrollment: "none" },
+    addedDate: new Date("2025-10-03"),
+    addedBy: "Sarah Chen",
+    lastLogin: new Date("2026-02-03T11:05:00"),
+    status: "active",
+    productAccess: {
+      reports: ["Connect", "ALEKS"],
+      licenses: ["Connect", "ALEKS", "SIMnet", "Sharpen"],
+      enrollment: [],
+    },
+  },
+  {
+    id: "user-4",
+    name: "David Park",
+    email: "dpark@stateuniversity.edu",
+    role: "institutional_admin",
+    institution: "State University",
+    permissions: { reports: "view_only", licenses: "none", enrollment: "full" },
+    addedDate: new Date("2025-11-20"),
+    addedBy: "Sarah Chen",
+    lastLogin: new Date("2026-01-28T16:45:00"),
+    status: "active",
+    productAccess: {
+      reports: ["Connect", "ALEKS"],
+      licenses: [],
+      enrollment: ["Connect", "ALEKS", "SIMnet"],
+    },
+  },
+  {
+    id: "user-5",
+    name: "Emily Rodriguez",
+    email: "erodriguez@stateuniversity.edu",
+    role: "institutional_admin",
+    institution: "State University",
+    permissions: { reports: "none", licenses: "none", enrollment: "none" },
+    addedDate: new Date("2026-02-01"),
+    addedBy: "Sarah Chen",
+    status: "invited",
+    productAccess: {
+      reports: [],
+      licenses: [],
+      enrollment: [],
+    },
+  },
+];
+
+export function getAdminStats(admins: AdminUser[]) {
+  const total = admins.length;
+  const active = admins.filter((u) => u.status === "active").length;
+  const invited = admins.filter((u) => u.status === "invited").length;
+  const moduleCount = admins.reduce((sum, u) => {
+    const mods = [u.permissions.reports, u.permissions.licenses, u.permissions.enrollment].filter(
+      (p) => p !== "none"
+    ).length;
+    return sum + mods;
+  }, 0);
+  const avgModules = total > 0 ? Math.round((moduleCount / total) * 10) / 10 : 0;
+
+  return { total, active, invited, avgModules };
+}

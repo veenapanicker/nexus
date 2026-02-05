@@ -18,6 +18,7 @@ import {
   Eye,
   Home,
   LogOut,
+  Users,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
@@ -216,6 +217,24 @@ export function Sidebar() {
           })}
         </div>
       </nav>
+
+      {/* User Access Link */}
+      <div className="px-2 py-2 border-t border-[var(--border)]">
+        <Link
+          href="/access"
+          className={cn(
+            "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200",
+            pathname === "/access"
+              ? "bg-[#E21A23]/10 text-[#E21A23] font-medium"
+              : "text-[var(--muted-foreground)] hover:bg-[var(--muted)] hover:text-[var(--foreground)]",
+            collapsed && "justify-center px-2"
+          )}
+          title={collapsed ? "User Access" : undefined}
+        >
+          <Users className={cn("h-5 w-5 flex-shrink-0", pathname === "/access" && "text-[#E21A23]")} />
+          {!collapsed && <span>User Access</span>}
+        </Link>
+      </div>
 
       {/* User Section */}
       {!collapsed && (
