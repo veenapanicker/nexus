@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
@@ -89,29 +89,12 @@ export function Sidebar() {
       {/* Logo */}
       <div className="flex items-center h-16 px-3 border-b border-[var(--border)]">
         <Link href="/home" className="flex items-center gap-2 w-full min-w-0">
-          {!collapsed ? (
-            <div className="w-14 h-14 flex items-center justify-center flex-shrink-0 rounded">
-              <Image
-                src="/logos/logo_mhe.png"
-                alt="McGraw Hill"
-                width={56}
-                height={56}
-                className="object-contain"
-                priority
-              />
-            </div>
-          ) : (
-            <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 rounded">
-              <Image
-                src="/logos/logo_mhe.png"
-                alt="McGraw Hill"
-                width={48}
-                height={48}
-                className="object-contain"
-                priority
-              />
-            </div>
-          )}
+          <div className={cn(
+            "flex items-center justify-center flex-shrink-0 rounded-lg bg-[#E21A23]",
+            collapsed ? "w-10 h-10" : "w-11 h-11"
+          )}>
+            <span className="text-white font-bold text-lg">N</span>
+          </div>
           {!collapsed && (
             <div className="min-w-0">
               <h1 className="font-display font-semibold text-[var(--foreground)] truncate text-sm">Nexus</h1>

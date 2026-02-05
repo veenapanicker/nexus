@@ -23,7 +23,7 @@ export function AddLicenseModal({ open, onClose }: AddLicenseModalProps) {
   // Single add form state
   const [studentEmail, setStudentEmail] = useState("");
   const [studentName, setStudentName] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState<Product>("Connect");
+  const [selectedProduct, setSelectedProduct] = useState<Product>("Platform 1");
   const [selectedCourse, setSelectedCourse] = useState("");
 
   // Bulk upload state
@@ -33,7 +33,7 @@ export function AddLicenseModal({ open, onClose }: AddLicenseModalProps) {
   const resetForm = () => {
     setStudentEmail("");
     setStudentName("");
-    setSelectedProduct("Connect");
+    setSelectedProduct("Platform 1");
     setSelectedCourse("");
     setUploadedFile(null);
     setPreviewData(null);
@@ -92,7 +92,7 @@ export function AddLicenseModal({ open, onClose }: AddLicenseModalProps) {
       // Simulate parsing file
       setPreviewData({
         count: Math.floor(Math.random() * 50) + 10,
-        product: "Connect",
+        product: "Platform 1",
       });
     }
   };
@@ -215,10 +215,10 @@ export function AddLicenseModal({ open, onClose }: AddLicenseModalProps) {
                       onChange={(e) => setSelectedProduct(e.target.value as Product)}
                       className="w-full px-4 py-3 rounded-lg text-sm bg-[var(--muted)] border border-transparent text-[var(--foreground)] focus:outline-none focus:border-[#E21A23] cursor-pointer"
                     >
-                      <option value="Connect">Connect (77 available)</option>
-                      <option value="ALEKS">ALEKS (13 available)</option>
-                      <option value="SIMnet">SIMnet (8 available)</option>
-                      <option value="Sharpen">Sharpen (44 available)</option>
+                      <option value="Platform 1">Platform 1 (77 available)</option>
+                      <option value="Platform 2">Platform 2 (13 available)</option>
+                      <option value="Platform 3">Platform 3 (8 available)</option>
+                      <option value="Platform 4">Platform 4 (44 available)</option>
                     </select>
                   </div>
 
@@ -321,7 +321,7 @@ export function AddLicenseModal({ open, onClose }: AddLicenseModalProps) {
                             <div className="flex items-start gap-2">
                               <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
                               <p className="text-xs text-amber-700">
-                                This will assign {previewData.count} Connect licenses. Make sure you have enough available seats.
+                                This will assign {previewData.count} Platform 1 licenses. Make sure you have enough available seats.
                               </p>
                             </div>
                           </div>

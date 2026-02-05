@@ -65,7 +65,7 @@ export default function ReportLibraryPage() {
     return groups;
   }, [filteredReports]);
 
-  const productOrder: Product[] = ["Connect", "ALEKS", "SIMnet", "Sharpen"];
+  const productOrder: Product[] = ["Platform 1", "Platform 2", "Platform 3", "Platform 4"];
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
@@ -76,7 +76,7 @@ export default function ReportLibraryPage() {
             <div>
               <h1 className="text-2xl font-display font-bold text-[var(--foreground)]">Reporting Hub</h1>
               <p className="text-sm text-[var(--muted-foreground)] mt-1">
-                Access and manage reports from all McGraw Hill products
+                Access and manage reports from all EduTech products
               </p>
             </div>
             <div className="flex items-center gap-3">
@@ -166,10 +166,10 @@ export default function ReportLibraryPage() {
                     <span
                       className={cn(
                         "w-3 h-3 rounded-full animate-pulse",
-                        product === "Connect" && "bg-[#E21A23]",
-                        product === "ALEKS" && "bg-[#E21A23]",
-                        product === "SIMnet" && "bg-[#10B981]",
-                        product === "Sharpen" && "bg-[#F08080]"
+                        product === "Platform 1" && "bg-[#E21A23]",
+                        product === "Platform 2" && "bg-[#E21A23]",
+                        product === "Platform 3" && "bg-[#10B981]",
+                        product === "Platform 4" && "bg-[#F08080]"
                       )}
                     />
                     {product} Reports

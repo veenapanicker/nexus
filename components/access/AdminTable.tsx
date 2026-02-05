@@ -19,10 +19,10 @@ const roleLabels: Record<string, { label: string; className: string }> = {
 };
 
 const productDotColors: Record<string, string> = {
-  Connect: "bg-[#4A3B8A]",
-  ALEKS: "bg-[#E21A23]",
-  SIMnet: "bg-[#10B981]",
-  Sharpen: "bg-[#F08080]",
+  "Platform 1": "bg-[#4A3B8A]",
+  "Platform 2": "bg-[#E21A23]",
+  "Platform 3": "bg-[#10B981]",
+  "Platform 4": "bg-[#F08080]",
 };
 
 function getUniqueProducts(admin: AdminUser): string[] {

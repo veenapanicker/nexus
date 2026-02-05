@@ -6,7 +6,7 @@ import { ClientLayout } from "@/components/layout/ClientLayout";
 
 export const metadata: Metadata = {
   title: "Nexus - Institutional Administrator Dashboard",
-  description: "Centralized administrative dashboard for McGraw Hill products",
+  description: "Centralized administrative dashboard for EduTech products",
 };
 
 export default function RootLayout({

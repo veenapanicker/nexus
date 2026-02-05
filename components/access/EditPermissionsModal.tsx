@@ -34,10 +34,10 @@ const accessLevels: { value: ModuleAccess; label: string }[] = [
 ];
 
 const productDotColors: Record<string, string> = {
-  Connect: "bg-[#4A3B8A]",
-  ALEKS: "bg-[#E21A23]",
-  SIMnet: "bg-[#10B981]",
-  Sharpen: "bg-[#F08080]",
+  "Platform 1": "bg-[#4A3B8A]",
+  "Platform 2": "bg-[#E21A23]",
+  "Platform 3": "bg-[#10B981]",
+  "Platform 4": "bg-[#F08080]",
 };
 
 export function EditPermissionsModal({ admin, isOpen, onClose, onSave }: EditPermissionsModalProps) {
@@ -239,11 +239,11 @@ export function EditPermissionsModal({ admin, isOpen, onClose, onSave }: EditPer
                         )}
                         style={{
                           backgroundColor:
-                            course.product === "Connect"
+                            course.product === "Platform 1"
                               ? "#4A3B8A"
-                              : course.product === "ALEKS"
+                              : course.product === "Platform 2"
                               ? "#E21A23"
-                              : course.product === "SIMnet"
+                              : course.product === "Platform 3"
                               ? "#10B981"
                               : "#F08080",
                         }}

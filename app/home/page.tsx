@@ -26,7 +26,7 @@ export default function HomePage() {
     {
       id: "reports",
       name: "Reports Hub",
-      description: "Generate, schedule, and download reports from all McGraw Hill products",
+      description: "Generate, schedule, and download reports from all EduTech products",
       icon: FileText,
       href: "/",
       access: currentUser.permissions.reports,
@@ -70,7 +70,7 @@ export default function HomePage() {
 
   const recentActivity = [
     { action: "Report generated", detail: "Course Enrollment Summary", time: "2 hours ago", icon: FileText },
-    { action: "Licenses assigned", detail: "12 students added to Connect", time: "4 hours ago", icon: Key },
+    { action: "Licenses assigned", detail: "12 students added to Platform 1", time: "4 hours ago", icon: Key },
     { action: "Enrollment synced", detail: "Canvas LMS sync completed", time: "1 day ago", icon: GraduationCap },
     { action: "Schedule created", detail: "Weekly performance report", time: "2 days ago", icon: Clock },
   ];

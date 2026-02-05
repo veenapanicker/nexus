@@ -9,28 +9,28 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // McGraw Hill-inspired typography
+        // EduTech-inspired typography
         display: ["Poppins", "sans-serif"],
         sans: ["Source Sans Pro", "sans-serif"],
       },
       colors: {
-        // McGraw Hill brand colors
+        // EduTech brand colors
         mh: {
           red: "#E21A23",
           red_dark: "#B8131A",
           black: "#101010",
           white: "#FFFFFF",
         },
-        // Nexus brand palette (refined with MH red)
+        // Nexus brand palette (refined with brand red)
         nexus: {
-          primary: "#E21A23", // McGraw Hill red
+          primary: "#E21A23", // EduTech red
           purple: {
             DEFAULT: "#4A3B8A",
             dark: "#3A2B7A",
             light: "#6A5BAA",
           },
           red: {
-            DEFAULT: "#E21A23", // McGraw Hill red
+            DEFAULT: "#E21A23", // EduTech red
             dark: "#B8131A",
             light: "#F04A52",
           },

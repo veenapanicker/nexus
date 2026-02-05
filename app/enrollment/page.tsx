@@ -32,10 +32,10 @@ import Link from "next/link";
 import { EnrollmentActionsModal } from "@/components/enrollment/EnrollmentActionsModal";
 
 const productColors: Record<Product, { bg: string; text: string; border: string; icon: string }> = {
-  Connect: { bg: "bg-[#4A3B8A]", text: "text-white", border: "border-[#4A3B8A]", icon: "bg-[#4A3B8A]/10 text-[#4A3B8A]" },
-  ALEKS: { bg: "bg-[#E21A23]", text: "text-white", border: "border-[#E21A23]", icon: "bg-[#E21A23]/10 text-[#E21A23]" },
-  SIMnet: { bg: "bg-[#10B981]", text: "text-white", border: "border-[#10B981]", icon: "bg-[#10B981]/10 text-[#10B981]" },
-  Sharpen: { bg: "bg-[#F8B4D9]", text: "text-[#4A3B8A]", border: "border-[#F8B4D9]", icon: "bg-[#F8B4D9]/20 text-[#4A3B8A]" },
+  "Platform 1": { bg: "bg-[#4A3B8A]", text: "text-white", border: "border-[#4A3B8A]", icon: "bg-[#4A3B8A]/10 text-[#4A3B8A]" },
+  "Platform 2": { bg: "bg-[#E21A23]", text: "text-white", border: "border-[#E21A23]", icon: "bg-[#E21A23]/10 text-[#E21A23]" },
+  "Platform 3": { bg: "bg-[#10B981]", text: "text-white", border: "border-[#10B981]", icon: "bg-[#10B981]/10 text-[#10B981]" },
+  "Platform 4": { bg: "bg-[#F8B4D9]", text: "text-[#4A3B8A]", border: "border-[#F8B4D9]", icon: "bg-[#F8B4D9]/20 text-[#4A3B8A]" },
 };
 
 type ViewMode = "course" | "product";
@@ -190,22 +190,22 @@ export default function EnrollmentPage() {
           </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-4 pt-4 border-t border-[var(--border)]">
             <div className="flex items-center gap-2">
-              <span className={cn("w-3 h-3 rounded-full", productColors.Connect.bg)} />
-              <span className="text-sm text-[var(--muted-foreground)]">Connect:</span>
-              <span className="text-sm font-medium text-[var(--foreground)]">{stats.byProduct.Connect.count.toLocaleString()}</span>
-              <span className="text-xs text-[var(--muted-foreground)]">({stats.byProduct.Connect.percentage}%)</span>
+              <span className={cn("w-3 h-3 rounded-full", productColors["Platform 1"].bg)} />
+              <span className="text-sm text-[var(--muted-foreground)]">Platform 1:</span>
+              <span className="text-sm font-medium text-[var(--foreground)]">{stats.byProduct["Platform 1"].count.toLocaleString()}</span>
+              <span className="text-xs text-[var(--muted-foreground)]">({stats.byProduct["Platform 1"].percentage}%)</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className={cn("w-3 h-3 rounded-full", productColors.ALEKS.bg)} />
-              <span className="text-sm text-[var(--muted-foreground)]">ALEKS:</span>
-              <span className="text-sm font-medium text-[var(--foreground)]">{stats.byProduct.ALEKS.count.toLocaleString()}</span>
-              <span className="text-xs text-[var(--muted-foreground)]">({stats.byProduct.ALEKS.percentage}%)</span>
+              <span className={cn("w-3 h-3 rounded-full", productColors["Platform 2"].bg)} />
+              <span className="text-sm text-[var(--muted-foreground)]">Platform 2:</span>
+              <span className="text-sm font-medium text-[var(--foreground)]">{stats.byProduct["Platform 2"].count.toLocaleString()}</span>
+              <span className="text-xs text-[var(--muted-foreground)]">({stats.byProduct["Platform 2"].percentage}%)</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className={cn("w-3 h-3 rounded-full", productColors.SIMnet.bg)} />
-              <span className="text-sm text-[var(--muted-foreground)]">SIMnet:</span>
-              <span className="text-sm font-medium text-[var(--foreground)]">{stats.byProduct.SIMnet.count.toLocaleString()}</span>
-              <span className="text-xs text-[var(--muted-foreground)]">({stats.byProduct.SIMnet.percentage}%)</span>
+              <span className={cn("w-3 h-3 rounded-full", productColors["Platform 3"].bg)} />
+              <span className="text-sm text-[var(--muted-foreground)]">Platform 3:</span>
+              <span className="text-sm font-medium text-[var(--foreground)]">{stats.byProduct["Platform 3"].count.toLocaleString()}</span>
+              <span className="text-xs text-[var(--muted-foreground)]">({stats.byProduct["Platform 3"].percentage}%)</span>
             </div>
           </div>
         </div>
@@ -261,9 +261,9 @@ export default function EnrollmentPage() {
                       className="appearance-none pl-3 pr-8 py-2 rounded-lg text-sm bg-[var(--muted)] border border-transparent text-[var(--foreground)] focus:outline-none focus:border-[#E21A23] cursor-pointer"
                     >
                       <option value="all">All Products</option>
-                      <option value="Connect">Connect</option>
-                      <option value="ALEKS">ALEKS</option>
-                      <option value="SIMnet">SIMnet</option>
+                      <option value="Platform 1">Platform 1</option>
+                      <option value="Platform 2">Platform 2</option>
+                      <option value="Platform 3">Platform 3</option>
                     </select>
                     <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--muted-foreground)] pointer-events-none" />
                   </div>
@@ -388,9 +388,9 @@ export default function EnrollmentPage() {
             {enrollmentByProduct.map((productData, idx) => {
               const colors = productColors[productData.product];
               const productIcons: Record<string, string> = {
-                Connect: "text-[#4A3B8A]",
-                ALEKS: "text-[#E21A23]",
-                SIMnet: "text-[#10B981]",
+                "Platform 1": "text-[#4A3B8A]",
+                "Platform 2": "text-[#E21A23]",
+                "Platform 3": "text-[#10B981]",
               };
 
               return (

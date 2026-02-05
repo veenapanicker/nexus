@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Eye, EyeOff } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -50,7 +51,7 @@ export default function LoginPage() {
               </div>
               <div>
                 <h1 className="text-2xl font-display font-bold">Nexus</h1>
-                <p className="text-white/70 text-sm">by McGraw Hill</p>
+                <p className="text-white/70 text-sm">by EduTech</p>
               </div>
             </div>
           </div>
@@ -60,7 +61,7 @@ export default function LoginPage() {
               Your centralized hub for institutional administration
             </h2>
             <p className="text-white/80 text-lg leading-relaxed">
-              Manage reports, licenses, and enrollment across all McGraw Hill products in one place.
+              Manage reports, licenses, and enrollment across all EduTech products in one place.
             </p>
           </div>
 
@@ -69,7 +70,7 @@ export default function LoginPage() {
               <div className="w-2 h-2 rounded-full bg-green-400" />
               All systems operational
             </div>
-            <div>© 2026 McGraw Hill</div>
+            <div>© 2026 EduTech</div>
           </div>
         </div>
       </div>
@@ -84,7 +85,7 @@ export default function LoginPage() {
             </div>
             <div>
               <h1 className="text-xl font-display font-bold text-[var(--foreground)]">Nexus</h1>
-              <p className="text-xs text-[var(--muted-foreground)]">by McGraw Hill</p>
+              <p className="text-xs text-[var(--muted-foreground)]">by EduTech</p>
             </div>
           </div>
 

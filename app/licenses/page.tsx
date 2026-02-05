@@ -33,11 +33,10 @@ import {
 import { AddLicenseModal } from "@/components/licenses/AddLicenseModal";
 
 const productColors: Record<Product, { bg: string; text: string; border: string }> = {
-  Connect: { bg: "bg-[#4A3B8A]", text: "text-white", border: "border-[#4A3B8A]" },
-  ALEKS: { bg: "bg-[#E21A23]", text: "text-white", border: "border-[#E21A23]" },
-  SIMnet: { bg: "bg-[#10B981]", text: "text-white", border: "border-[#10B981]" },
-  SIMnet: { bg: "bg-[#10B981]", text: "text-white", border: "border-[#10B981]" },
-  Sharpen: { bg: "bg-[#F8B4D9]", text: "text-[#4A3B8A]", border: "border-[#F8B4D9]" },
+  "Platform 1": { bg: "bg-[#4A3B8A]", text: "text-white", border: "border-[#4A3B8A]" },
+  "Platform 2": { bg: "bg-[#E21A23]", text: "text-white", border: "border-[#E21A23]" },
+  "Platform 3": { bg: "bg-[#10B981]", text: "text-white", border: "border-[#10B981]" },
+  "Platform 4": { bg: "bg-[#F8B4D9]", text: "text-[#4A3B8A]", border: "border-[#F8B4D9]" },
 };
 
 export default function LicensesPage() {
@@ -80,7 +79,7 @@ export default function LicensesPage() {
                     License Management
                   </h1>
                   <p className="text-sm text-[var(--muted-foreground)]">
-                    Track and manage licenses across all McGraw Hill products
+                    Track and manage licenses across all EduTech products
                   </p>
                 </div>
               </div>
@@ -257,10 +256,10 @@ export default function LicensesPage() {
                     className="appearance-none pl-3 pr-8 py-2 rounded-lg text-sm bg-[var(--muted)] border border-transparent text-[var(--foreground)] focus:outline-none focus:border-[#E21A23] cursor-pointer"
                   >
                     <option value="all">All Products</option>
-                    <option value="Connect">Connect</option>
-                    <option value="ALEKS">ALEKS</option>
-                    <option value="SIMnet">SIMnet</option>
-                    <option value="Sharpen">Sharpen</option>
+                    <option value="Platform 1">Platform 1</option>
+                    <option value="Platform 2">Platform 2</option>
+                    <option value="Platform 3">Platform 3</option>
+                    <option value="Platform 4">Platform 4</option>
                   </select>
                   <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--muted-foreground)] pointer-events-none" />
                 </div>

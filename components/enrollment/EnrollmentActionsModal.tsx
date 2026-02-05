@@ -484,7 +484,7 @@ export function EnrollmentActionsModal({
                       <div>
                         <span className="text-sm text-[var(--foreground)]">By product:</span>
                         <div className="flex items-center gap-4 mt-2">
-                          {["Connect", "ALEKS", "SIMnet"].map((product) => (
+                          {["Platform 1", "Platform 2", "Platform 3"].map((product) => (
                             <label key={product} className="flex items-center gap-2 cursor-pointer">
                               <input
                                 type="checkbox"

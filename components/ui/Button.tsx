@@ -58,7 +58,7 @@ export function Button({
 
   if (asChild) {
     return (
-      <div className={buttonClassName} {...props}>
+      <div className={buttonClassName}>
         {children}
       </div>
     );

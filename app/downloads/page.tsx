@@ -125,7 +125,7 @@ export default function DownloadCenterPage() {
     return isBefore(expiresAt, sevenDaysFromNow);
   };
 
-  const products: (Product | "all")[] = ["all", "Connect", "ALEKS", "SIMnet", "Sharpen"];
+  const products: (Product | "all")[] = ["all", "Platform 1", "Platform 2", "Platform 3", "Platform 4"];
 
   return (
     <div className="min-h-screen bg-[var(--background)]">

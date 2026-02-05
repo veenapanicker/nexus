@@ -28,11 +28,10 @@ import {
 } from "lucide-react";
 
 const productColors: Record<Product, { bg: string; text: string; border: string }> = {
-  Connect: { bg: "bg-[#4A3B8A]", text: "text-white", border: "border-[#4A3B8A]" },
-  ALEKS: { bg: "bg-[#E21A23]", text: "text-white", border: "border-[#E21A23]" },
-  SIMnet: { bg: "bg-[#10B981]", text: "text-white", border: "border-[#10B981]" },
-  SIMnet: { bg: "bg-[#10B981]", text: "text-white", border: "border-[#10B981]" },
-  Sharpen: { bg: "bg-[#F8B4D9]", text: "text-[#4A3B8A]", border: "border-[#F8B4D9]" },
+  "Platform 1": { bg: "bg-[#4A3B8A]", text: "text-white", border: "border-[#4A3B8A]" },
+  "Platform 2": { bg: "bg-[#E21A23]", text: "text-white", border: "border-[#E21A23]" },
+  "Platform 3": { bg: "bg-[#10B981]", text: "text-white", border: "border-[#10B981]" },
+  "Platform 4": { bg: "bg-[#F8B4D9]", text: "text-[#4A3B8A]", border: "border-[#F8B4D9]" },
 };
 
 type FilterStatus = "all" | "active" | "inactive";
@@ -48,7 +47,7 @@ export default function CourseDetailsPage() {
     id: "enc-1",
     name: "Biology 101",
     code: "BIO 101",
-    product: "Connect" as Product,
+    product: "Platform 1" as Product,
     instructor: "Dr. Sarah Ahmed",
     term: "Spring 2026",
     enrolledCount: 247,

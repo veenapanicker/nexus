@@ -51,7 +51,7 @@ export const colors = {
   // Focus state (accessibility)
   focus: "#3B82F6",
   focusRing: "focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
-  // Brand colors (McGraw Hill + Product colors)
+  // Brand colors (EduTech + Product colors)
   brand: {
     mhRed: "#E21A23",
     mhRedDark: "#B8131A",

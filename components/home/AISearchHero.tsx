@@ -42,7 +42,7 @@ const productBranding = {
     bg: "bg-[#4A3B8A]",
     bgLight: "bg-[#4A3B8A]/8",
     text: "text-[#4A3B8A]",
-    name: "Connect",
+    name: "Platform 1",
     icon: "/logos/connect-icon.svg",
   },
   aleks: {
@@ -50,7 +50,7 @@ const productBranding = {
     bg: "bg-[#E21A23]",
     bgLight: "bg-[#E21A23]/8",
     text: "text-[#C41920]",
-    name: "ALEKS",
+    name: "Platform 2",
     icon: "/logos/aleks-icon.svg",
   },
   simnet: {
@@ -58,7 +58,7 @@ const productBranding = {
     bg: "bg-[#10B981]",
     bgLight: "bg-[#10B981]/8",
     text: "text-[#10B981]",
-    name: "SIMnet",
+    name: "Platform 3",
     icon: "/logos/simnet-icon.svg",
   },
   sharpen: {
@@ -66,7 +66,7 @@ const productBranding = {
     bg: "bg-[#F08080]",
     bgLight: "bg-[#F08080]/10",
     text: "text-[#D66060]",
-    name: "Sharpen",
+    name: "Platform 4",
     icon: "/logos/sharpen-icon.svg",
   },
 };
@@ -191,7 +191,7 @@ const getAIResults = (query: string): SearchResult[] => {
         type: "insight",
         icon: Key,
         title: "142 licenses expiring soon",
-        description: "SIMnet licenses expire Feb 28, 2026",
+        description: "Platform 3 licenses expire Feb 28, 2026",
         link: "/licenses",
         product: "simnet",
       },
@@ -229,7 +229,7 @@ const getAIResults = (query: string): SearchResult[] => {
         type: "help",
         icon: HelpCircle,
         title: "Getting started with Nexus",
-        description: "Nexus is your central hub for managing McGraw Hill products across your institution",
+        description: "Nexus is your central hub for managing EduTech products across your institution",
       },
       {
         type: "help",
@@ -245,15 +245,15 @@ const getAIResults = (query: string): SearchResult[] => {
       {
         type: "data",
         icon: BookOpen,
-        title: "Connect: 856 students enrolled",
-        description: "18 courses using Connect this term",
+        title: "Platform 1: 856 students enrolled",
+        description: "18 courses using Platform 1 this term",
         link: "/enrollment",
         product: "connect",
       },
       {
         type: "data",
         icon: Key,
-        title: "Connect licenses: 423/500 used",
+        title: "Platform 1 licenses: 423/500 used",
         description: "77 licenses available, expires Aug 15",
         link: "/licenses",
         product: "connect",
@@ -266,15 +266,15 @@ const getAIResults = (query: string): SearchResult[] => {
       {
         type: "data",
         icon: BookOpen,
-        title: "ALEKS: 421 students enrolled",
-        description: "11 courses using ALEKS, 90% active rate",
+        title: "Platform 2: 421 students enrolled",
+        description: "11 courses using Platform 2, 90% active rate",
         link: "/enrollment",
         product: "aleks",
       },
       {
         type: "data",
         icon: Key,
-        title: "ALEKS licenses: 287/300 used",
+        title: "Platform 2 licenses: 287/300 used",
         description: "13 licenses available, expires May 31",
         link: "/licenses",
         product: "aleks",
@@ -287,15 +287,15 @@ const getAIResults = (query: string): SearchResult[] => {
       {
         type: "data",
         icon: BookOpen,
-        title: "SIMnet: 178 students enrolled",
-        description: "5 courses using SIMnet, 80% active rate",
+        title: "Platform 3: 178 students enrolled",
+        description: "5 courses using Platform 3, 80% active rate",
         link: "/enrollment",
         product: "simnet",
       },
       {
         type: "data",
         icon: Key,
-        title: "SIMnet licenses: 142/150 used",
+        title: "Platform 3 licenses: 142/150 used",
         description: "8 licenses available, expires Feb 28",
         link: "/licenses",
         product: "simnet",
@@ -308,7 +308,7 @@ const getAIResults = (query: string): SearchResult[] => {
       {
         type: "data",
         icon: BookOpen,
-        title: "Sharpen: 156 students active",
+        title: "Platform 4: 156 students active",
         description: "Study app engagement across all courses",
         link: "/enrollment",
         product: "sharpen",
@@ -413,7 +413,7 @@ export function AISearchHero() {
     <div className="relative mb-10" ref={containerRef}>
       {/* Hero Card */}
       <div className="relative bg-[var(--card)] rounded-3xl border border-[var(--border)] overflow-hidden">
-        {/* McGraw Hill Brand Strip - THE ONLY place red appears prominently */}
+        {/* EduTech Brand Strip - THE ONLY place red appears prominently */}
         <div className="h-1 bg-gradient-to-r from-[#E21A23] via-[#4A3B8A] to-[#10B981]" />
 
         {/* Subtle background texture */}
