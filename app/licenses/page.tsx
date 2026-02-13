@@ -383,10 +383,13 @@ export default function LicensesPage() {
           {/* Pagination Footer */}
           <div className="px-5 py-4 border-t border-[var(--border)] flex items-center justify-between">
             <p className="text-sm text-[var(--muted-foreground)]">
-              Showing <span className="font-medium text-[var(--foreground)]">{filteredStudentLicenses.length}</span> of{" "}
-              <span className="font-medium text-[var(--foreground)]">{studentLicenses.length}</span> student licenses
+              Showing <span className="font-medium text-[var(--foreground)]">1-{filteredStudentLicenses.length}</span> of{" "}
+              <span className="font-medium text-[var(--foreground)]">{stats.used.toLocaleString()}</span> student licenses
             </p>
             <div className="flex items-center gap-2">
+              <span className="text-sm text-[var(--muted-foreground)] mr-2">
+                Page 1 of {Math.ceil(stats.used / 8)}
+              </span>
               <button
                 disabled
                 className="px-3 py-1.5 rounded-lg text-sm border border-[var(--border)] text-[var(--muted-foreground)] disabled:opacity-50"
@@ -396,6 +399,16 @@ export default function LicensesPage() {
               <Button variant="primary" size="sm">
                 1
               </Button>
+              <button className="px-3 py-1.5 rounded-lg text-sm border border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]">
+                2
+              </button>
+              <button className="px-3 py-1.5 rounded-lg text-sm border border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]">
+                3
+              </button>
+              <span className="text-[var(--muted-foreground)]">...</span>
+              <button className="px-3 py-1.5 rounded-lg text-sm border border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]">
+                {Math.ceil(stats.used / 8)}
+              </button>
               <button className="px-3 py-1.5 rounded-lg text-sm border border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]">
                 Next
               </button>

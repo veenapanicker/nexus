@@ -166,10 +166,10 @@ export default function ReportLibraryPage() {
                     <span
                       className={cn(
                         "w-3 h-3 rounded-full animate-pulse",
-                        product === "Platform 1" && "bg-[#E21A23]",
+                        product === "Platform 1" && "bg-[#4A3B8A]",
                         product === "Platform 2" && "bg-[#E21A23]",
                         product === "Platform 3" && "bg-[#10B981]",
-                        product === "Platform 4" && "bg-[#F08080]"
+                        product === "Platform 4" && "bg-[#F8B4D9]"
                       )}
                     />
                     {product} Reports

@@ -25,7 +25,7 @@ export function ReportCard({ report, onGenerate, onSchedule }: ReportCardProps) 
           <div className="flex items-center gap-2 mb-2">
             <span
               className={cn(
-                "px-2 py-0.5 rounded-md text-xs font-medium",
+                "px-3 py-1 rounded-full text-xs font-medium",
                 getProductColor(report.product)
               )}
             >

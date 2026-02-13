@@ -168,7 +168,7 @@ export default function DownloadCenterPage() {
                   "w-full pl-10 pr-4 py-2.5 rounded-lg text-sm",
                   "bg-[var(--muted)] border border-transparent",
                   "text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]",
-                  "focus:outline-none focus:border-nexus-purple focus:ring-1 focus:ring-nexus-purple"
+                  "focus:outline-none focus:border-[#1E3A8A] focus:ring-1 focus:ring-[#1E3A8A]"
                 )}
               />
               {searchQuery && (
@@ -191,7 +191,7 @@ export default function DownloadCenterPage() {
                   "px-4 py-2.5 rounded-lg text-sm",
                   "bg-[var(--muted)] border border-transparent",
                   "text-[var(--foreground)]",
-                  "focus:outline-none focus:border-nexus-purple"
+                  "focus:outline-none focus:border-[#1E3A8A]"
                 )}
               >
                 {products.map((product) => (
@@ -213,7 +213,7 @@ export default function DownloadCenterPage() {
                   "px-4 py-2.5 rounded-lg text-sm",
                   "bg-[var(--muted)] border border-transparent",
                   "text-[var(--foreground)]",
-                  "focus:outline-none focus:border-nexus-purple"
+                  "focus:outline-none focus:border-[#1E3A8A]"
                 )}
               >
                 <option value="all">All Time</option>
@@ -227,8 +227,8 @@ export default function DownloadCenterPage() {
 
         {/* Bulk Actions */}
         {selectedReports.size > 0 && (
-          <div className="bg-nexus-purple/10 rounded-xl border border-nexus-purple/30 p-4 mb-6 flex items-center justify-between animate-slideUp">
-            <p className="text-sm font-medium text-nexus-purple">
+          <div className="bg-[#1E3A8A]/10 rounded-xl border border-[#1E3A8A]/30 p-4 mb-6 flex items-center justify-between animate-slideUp">
+            <p className="text-sm font-medium text-[#1E3A8A]">
               {selectedReports.size} report{selectedReports.size > 1 ? "s" : ""} selected
             </p>
             <div className="flex items-center gap-2">
@@ -236,7 +236,7 @@ export default function DownloadCenterPage() {
                 onClick={handleBulkDownload}
                 className={cn(
                   "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
-                  "bg-nexus-purple text-white hover:bg-nexus-purple-dark"
+                  "bg-[#1E3A8A] text-white hover:bg-[#1E40AF] hover:shadow-md"
                 )}
               >
                 <Download className="h-4 w-4" />
@@ -278,7 +278,7 @@ export default function DownloadCenterPage() {
               href="/"
               className={cn(
                 "inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
-                "bg-nexus-purple text-white hover:bg-nexus-purple-dark"
+                "bg-[#1E3A8A] text-white hover:bg-[#1E40AF] hover:shadow-md"
               )}
             >
               Go to Report Library
@@ -325,7 +325,7 @@ export default function DownloadCenterPage() {
                   key={report.id}
                   className={cn(
                     "grid grid-cols-1 md:grid-cols-[auto,2fr,1fr,1fr,1fr,1fr,auto] gap-4 px-6 py-4 items-center hover:bg-[var(--muted)]/50 transition-colors",
-                    selectedReports.has(report.id) && "bg-nexus-purple/5"
+                    selectedReports.has(report.id) && "bg-[#1E3A8A]/5"
                   )}
                 >
                   {/* Checkbox */}
@@ -335,7 +335,7 @@ export default function DownloadCenterPage() {
                       className="text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
                     >
                       {selectedReports.has(report.id) ? (
-                        <CheckSquare className="h-4 w-4 text-nexus-purple" />
+                        <CheckSquare className="h-4 w-4 text-[#1E3A8A]" />
                       ) : (
                         <Square className="h-4 w-4" />
                       )}
@@ -359,7 +359,7 @@ export default function DownloadCenterPage() {
                   <div>
                     <span
                       className={cn(
-                        "px-2 py-1 rounded text-xs font-medium",
+                        "px-3 py-1 rounded-full text-xs font-medium",
                         getProductColor(report.product)
                       )}
                     >
@@ -401,7 +401,7 @@ export default function DownloadCenterPage() {
                       onClick={() => handleDownload(report.reportName)}
                       className={cn(
                         "flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all",
-                        "bg-nexus-purple text-white hover:bg-nexus-purple-dark"
+                        "bg-[#1E3A8A] text-white hover:bg-[#1E40AF] hover:shadow-md"
                       )}
                     >
                       <Download className="h-4 w-4" />

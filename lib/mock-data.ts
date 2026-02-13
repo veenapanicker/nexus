@@ -388,10 +388,10 @@ export const generatedReports: GeneratedReport[] = [
 // Helper functions
 export function getProductColor(product: Product): string {
   const colors: Record<Product, string> = {
-    "Platform 1": "bg-nexus-purple text-white",
-    "Platform 2": "bg-nexus-red text-white",
-    "Platform 3": "bg-nexus-green text-white",
-    "Platform 4": "bg-nexus-pink text-nexus-purple-dark",
+    "Platform 1": "bg-[#4A3B8A] text-white",
+    "Platform 2": "bg-[#E21A23] text-white",
+    "Platform 3": "bg-[#10B981] text-white",
+    "Platform 4": "bg-[#F8B4D9] text-[#4A3B8A]",
   };
   return colors[product] || "bg-gray-500 text-white";
 }

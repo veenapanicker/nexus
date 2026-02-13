@@ -72,7 +72,7 @@ export function ScheduleModal({ report, isOpen, onClose }: ScheduleModalProps) {
           {/* Report Info */}
           <div className="mb-6 p-4 rounded-lg bg-[var(--muted)]">
             <div className="flex items-center gap-2 mb-1">
-              <span className={cn("px-2 py-0.5 rounded text-xs font-medium", getProductColor(report.product))}>
+              <span className={cn("px-3 py-1 rounded-full text-xs font-medium", getProductColor(report.product))}>
                 {report.product}
               </span>
             </div>

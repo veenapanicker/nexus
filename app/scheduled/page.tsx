@@ -80,8 +80,8 @@ export default function ScheduledReportsPage() {
               href="/"
               className={cn(
                 "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
-                "bg-nexus-purple text-white",
-                "hover:bg-nexus-purple-dark"
+                "bg-[#1E3A8A] text-white",
+                "hover:bg-[#1E40AF] hover:shadow-md"
               )}
             >
               <Plus className="h-4 w-4" />
@@ -106,8 +106,8 @@ export default function ScheduledReportsPage() {
               href="/"
               className={cn(
                 "inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
-                "bg-nexus-purple text-white",
-                "hover:bg-nexus-purple-dark"
+                "bg-[#1E3A8A] text-white",
+                "hover:bg-[#1E40AF] hover:shadow-md"
               )}
             >
               <Plus className="h-4 w-4" />
@@ -151,7 +151,7 @@ export default function ScheduledReportsPage() {
                     <div
                       className={cn(
                         "w-10 h-10 rounded-lg flex items-center justify-center",
-                        schedule.isActive ? "bg-nexus-purple/10" : "bg-[var(--muted)]"
+                        schedule.isActive ? "bg-[#1E3A8A]/10" : "bg-[var(--muted)]"
                       )}
                     >
                       {getFormatIcon(schedule.format)}
@@ -168,7 +168,7 @@ export default function ScheduledReportsPage() {
                   <div>
                     <span
                       className={cn(
-                        "px-2 py-1 rounded text-xs font-medium",
+                        "px-3 py-1 rounded-full text-xs font-medium",
                         getProductColor(schedule.product)
                       )}
                     >
