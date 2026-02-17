@@ -91,8 +91,8 @@ export function ScheduleModal({ report, isOpen, onClose }: ScheduleModalProps) {
                   className={cn(
                     "flex items-center justify-center px-4 py-3 rounded-lg border cursor-pointer transition-all text-sm font-medium capitalize",
                     frequency === freq
-                      ? "border-nexus-purple bg-nexus-purple/10 text-nexus-purple"
-                      : "border-[var(--border)] text-[var(--foreground)] hover:border-nexus-purple/30"
+                      ? "border-axis-purple bg-axis-purple/10 text-axis-purple"
+                      : "border-[var(--border)] text-[var(--foreground)] hover:border-axis-purple/30"
                   )}
                 >
                   <input
@@ -119,7 +119,7 @@ export function ScheduleModal({ report, isOpen, onClose }: ScheduleModalProps) {
                     "w-full px-3 py-2 rounded-lg text-sm",
                     "bg-[var(--muted)] border border-transparent",
                     "text-[var(--foreground)]",
-                    "focus:outline-none focus:border-nexus-purple focus:ring-1 focus:ring-nexus-purple"
+                    "focus:outline-none focus:border-axis-purple focus:ring-1 focus:ring-axis-purple"
                   )}
                 >
                   {days.map((day, idx) => (
@@ -141,7 +141,7 @@ export function ScheduleModal({ report, isOpen, onClose }: ScheduleModalProps) {
                     "w-full px-3 py-2 rounded-lg text-sm",
                     "bg-[var(--muted)] border border-transparent",
                     "text-[var(--foreground)]",
-                    "focus:outline-none focus:border-nexus-purple focus:ring-1 focus:ring-nexus-purple"
+                    "focus:outline-none focus:border-axis-purple focus:ring-1 focus:ring-axis-purple"
                   )}
                 >
                   {Array.from({ length: 28 }, (_, i) => i + 1).map((day) => (
@@ -166,8 +166,8 @@ export function ScheduleModal({ report, isOpen, onClose }: ScheduleModalProps) {
                   className={cn(
                     "flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg border cursor-pointer transition-all text-sm font-medium",
                     selectedFormat === option.value
-                      ? "border-nexus-purple bg-nexus-purple/10 text-nexus-purple"
-                      : "border-[var(--border)] text-[var(--foreground)] hover:border-nexus-purple/30"
+                      ? "border-axis-purple bg-axis-purple/10 text-axis-purple"
+                      : "border-[var(--border)] text-[var(--foreground)] hover:border-axis-purple/30"
                   )}
                 >
                   <input
@@ -195,8 +195,8 @@ export function ScheduleModal({ report, isOpen, onClose }: ScheduleModalProps) {
                 className={cn(
                   "flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all",
                   deliveryMethod === "email" || deliveryMethod === "both"
-                    ? "border-nexus-purple bg-nexus-purple/5"
-                    : "border-[var(--border)] hover:border-nexus-purple/30"
+                    ? "border-axis-purple bg-axis-purple/5"
+                    : "border-[var(--border)] hover:border-axis-purple/30"
                 )}
               >
                 <input
@@ -209,7 +209,7 @@ export function ScheduleModal({ report, isOpen, onClose }: ScheduleModalProps) {
                       setDeliveryMethod("download-center");
                     }
                   }}
-                  className="w-4 h-4 rounded border-[var(--border)] text-nexus-purple focus:ring-nexus-purple"
+                  className="w-4 h-4 rounded border-[var(--border)] text-axis-purple focus:ring-axis-purple"
                 />
                 <Mail className="h-4 w-4 text-[var(--muted-foreground)]" />
                 <span className="text-sm text-[var(--foreground)]">Email notification</span>
@@ -219,8 +219,8 @@ export function ScheduleModal({ report, isOpen, onClose }: ScheduleModalProps) {
                 className={cn(
                   "flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all",
                   deliveryMethod === "download-center" || deliveryMethod === "both"
-                    ? "border-nexus-purple bg-nexus-purple/5"
-                    : "border-[var(--border)] hover:border-nexus-purple/30"
+                    ? "border-axis-purple bg-axis-purple/5"
+                    : "border-[var(--border)] hover:border-axis-purple/30"
                 )}
               >
                 <input
@@ -233,7 +233,7 @@ export function ScheduleModal({ report, isOpen, onClose }: ScheduleModalProps) {
                       setDeliveryMethod("email");
                     }
                   }}
-                  className="w-4 h-4 rounded border-[var(--border)] text-nexus-purple focus:ring-nexus-purple"
+                  className="w-4 h-4 rounded border-[var(--border)] text-axis-purple focus:ring-axis-purple"
                 />
                 <Download className="h-4 w-4 text-[var(--muted-foreground)]" />
                 <span className="text-sm text-[var(--foreground)]">Save to Download Center</span>
@@ -252,7 +252,7 @@ export function ScheduleModal({ report, isOpen, onClose }: ScheduleModalProps) {
                     "w-full px-3 py-2 rounded-lg text-sm",
                     "bg-[var(--muted)] border border-transparent",
                     "text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]",
-                    "focus:outline-none focus:border-nexus-purple focus:ring-1 focus:ring-nexus-purple"
+                    "focus:outline-none focus:border-axis-purple focus:ring-1 focus:ring-axis-purple"
                   )}
                 />
               </div>

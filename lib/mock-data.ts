@@ -398,10 +398,10 @@ export function getProductColor(product: Product): string {
 
 export function getProductBorderColor(product: Product): string {
   const colors: Record<Product, string> = {
-    "Platform 1": "border-nexus-purple",
-    "Platform 2": "border-nexus-red",
-    "Platform 3": "border-nexus-green",
-    "Platform 4": "border-nexus-pink",
+    "Platform 1": "border-axis-purple",
+    "Platform 2": "border-axis-red",
+    "Platform 3": "border-axis-green",
+    "Platform 4": "border-axis-pink",
   };
   return colors[product] || "border-gray-500";
 }

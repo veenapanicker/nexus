@@ -246,7 +246,7 @@ export default function DownloadCenterPage() {
                 onClick={handleBulkDelete}
                 className={cn(
                   "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
-                  "border border-nexus-red text-nexus-red hover:bg-nexus-red/10"
+                  "border border-axis-red text-axis-red hover:bg-axis-red/10"
                 )}
               >
                 <Trash2 className="h-4 w-4" />
@@ -388,7 +388,7 @@ export default function DownloadCenterPage() {
                   <div className="hidden md:block">
                     <p className="text-sm text-[var(--foreground)]">{report.fileSize}</p>
                     {isExpiringSoon(report.expiresAt) && (
-                      <p className="text-xs text-nexus-red flex items-center gap-1">
+                      <p className="text-xs text-axis-red flex items-center gap-1">
                         <Clock className="h-3 w-3" />
                         Expires soon
                       </p>
@@ -409,7 +409,7 @@ export default function DownloadCenterPage() {
                     </button>
                     <button
                       onClick={() => handleDelete(report.id, report.reportName)}
-                      className="p-1.5 rounded-lg text-[var(--muted-foreground)] hover:bg-nexus-red/10 hover:text-nexus-red transition-all"
+                      className="p-1.5 rounded-lg text-[var(--muted-foreground)] hover:bg-axis-red/10 hover:text-axis-red transition-all"
                     >
                       <Trash2 className="h-4 w-4" />
                     </button>

@@ -136,8 +136,8 @@ export function GenerateModal({ report, isOpen, onClose }: GenerateModalProps) {
                   className={cn(
                     "flex items-center gap-4 p-4 rounded-lg border cursor-pointer transition-all",
                     selectedFormat === option.value
-                      ? "border-nexus-purple bg-nexus-purple/5"
-                      : "border-[var(--border)] hover:border-nexus-purple/30"
+                      ? "border-axis-purple bg-axis-purple/5"
+                      : "border-[var(--border)] hover:border-axis-purple/30"
                   )}
                 >
                   <input
@@ -152,7 +152,7 @@ export function GenerateModal({ report, isOpen, onClose }: GenerateModalProps) {
                     className={cn(
                       "w-10 h-10 rounded-lg flex items-center justify-center",
                       selectedFormat === option.value
-                        ? "bg-nexus-purple text-white"
+                        ? "bg-axis-purple text-white"
                         : "bg-[var(--muted)] text-[var(--muted-foreground)]"
                     )}
                   >
@@ -166,7 +166,7 @@ export function GenerateModal({ report, isOpen, onClose }: GenerateModalProps) {
                     className={cn(
                       "w-5 h-5 rounded-full border-2 flex items-center justify-center",
                       selectedFormat === option.value
-                        ? "border-nexus-purple bg-nexus-purple"
+                        ? "border-axis-purple bg-axis-purple"
                         : "border-[var(--border)]"
                     )}
                   >
@@ -195,7 +195,7 @@ export function GenerateModal({ report, isOpen, onClose }: GenerateModalProps) {
                     "w-full px-3 py-2 rounded-lg text-sm",
                     "bg-[var(--muted)] border border-transparent",
                     "text-[var(--foreground)]",
-                    "focus:outline-none focus:border-nexus-purple focus:ring-1 focus:ring-nexus-purple"
+                    "focus:outline-none focus:border-axis-purple focus:ring-1 focus:ring-axis-purple"
                   )}
                 />
               </div>
@@ -209,7 +209,7 @@ export function GenerateModal({ report, isOpen, onClose }: GenerateModalProps) {
                     "w-full px-3 py-2 rounded-lg text-sm",
                     "bg-[var(--muted)] border border-transparent",
                     "text-[var(--foreground)]",
-                    "focus:outline-none focus:border-nexus-purple focus:ring-1 focus:ring-nexus-purple"
+                    "focus:outline-none focus:border-axis-purple focus:ring-1 focus:ring-axis-purple"
                   )}
                 />
               </div>

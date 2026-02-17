@@ -5,7 +5,7 @@ import { Toaster } from "sonner";
 import { ClientLayout } from "@/components/layout/ClientLayout";
 
 export const metadata: Metadata = {
-  title: "Nexus - Institutional Administrator Dashboard",
+  title: "Axis - Institutional Administrator Dashboard",
   description: "Centralized administrative dashboard for EduTech products",
 };
 

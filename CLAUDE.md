@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Nexus is an institutional administrator dashboard for McGraw Hill products (Connect, ALEKS, SimNet, Sharpen). Built with Next.js 15, React 19, TypeScript, and Tailwind CSS.
+Axis is an institutional administrator dashboard for McGraw Hill products (Connect, ALEKS, SimNet, Sharpen). Built with Next.js 15, React 19, TypeScript, and Tailwind CSS.
 
 ## Commands
 

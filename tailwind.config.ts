@@ -21,8 +21,8 @@ export default {
           black: "#101010",
           white: "#FFFFFF",
         },
-        // Nexus brand palette (refined with brand red)
-        nexus: {
+        // Axis brand palette (refined with brand red)
+        axis: {
           primary: "#E21A23", // EduTech red
           purple: {
             DEFAULT: "#4A3B8A",

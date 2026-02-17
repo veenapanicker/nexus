@@ -1,8 +1,8 @@
-# Nexus Product Overview
+# Axis Product Overview
 
-## What is Nexus?
+## What is Axis?
 
-Nexus is a centralized administrative dashboard for institutional administrators managing McGraw Hill educational products. It provides a unified interface to oversee reports, licenses, and student enrollment across multiple McGraw Hill products from a single platform.
+Axis is a centralized administrative dashboard for institutional administrators managing McGraw Hill educational products. It provides a unified interface to oversee reports, licenses, and student enrollment across multiple McGraw Hill products from a single platform.
 
 ## Target Users
 
@@ -21,7 +21,7 @@ Nexus is a centralized administrative dashboard for institutional administrators
 
 ## Supported Products
 
-Nexus manages four McGraw Hill educational products:
+Axis manages four McGraw Hill educational products:
 
 1. **Connect** - Digital learning platform for course materials and assignments
 2. **ALEKS** - Adaptive learning and assessment system for math and science
@@ -70,7 +70,7 @@ Automate recurring report generation for regular stakeholder updates.
 
 **Delivery Methods**:
 - Email delivery to specified addresses
-- Download center (retrieve from Nexus)
+- Download center (retrieve from Axis)
 - Both options combined
 
 **Management**:

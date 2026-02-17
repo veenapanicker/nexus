@@ -189,7 +189,7 @@ export default function ScheduledReportsPage() {
                       {format(schedule.nextRun, "MMM d, yyyy")}
                     </p>
                     {!schedule.isActive && (
-                      <span className="text-xs text-nexus-red font-medium">Paused</span>
+                      <span className="text-xs text-axis-red font-medium">Paused</span>
                     )}
                   </div>
 
@@ -255,7 +255,7 @@ export default function ScheduledReportsPage() {
                           <hr className="my-1 border-[var(--border)]" />
                           <button
                             onClick={() => handleDelete(schedule.id, schedule.reportName)}
-                            className="w-full flex items-center gap-3 px-4 py-2 text-sm text-nexus-red hover:bg-nexus-red/10 transition-colors"
+                            className="w-full flex items-center gap-3 px-4 py-2 text-sm text-axis-red hover:bg-axis-red/10 transition-colors"
                           >
                             <Trash2 className="h-4 w-4" />
                             Delete Schedule

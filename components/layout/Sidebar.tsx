@@ -93,11 +93,11 @@ export function Sidebar() {
             "flex items-center justify-center flex-shrink-0 rounded-lg bg-[#E21A23]",
             collapsed ? "w-10 h-10" : "w-11 h-11"
           )}>
-            <span className="text-white font-bold text-lg">N</span>
+            <span className="text-white font-bold text-lg">A</span>
           </div>
           {!collapsed && (
             <div className="min-w-0">
-              <h1 className="font-display font-semibold text-[var(--foreground)] truncate text-sm">Nexus</h1>
+              <h1 className="font-display font-semibold text-[var(--foreground)] truncate text-sm">Axis</h1>
               <p className="text-xs text-[var(--muted-foreground)]">Admin Dashboard</p>
             </div>
           )}

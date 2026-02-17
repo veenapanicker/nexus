@@ -47,10 +47,10 @@ export default function LoginPage() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center">
-                <span className="text-2xl font-bold">N</span>
+                <span className="text-2xl font-bold">A</span>
               </div>
               <div>
-                <h1 className="text-2xl font-display font-bold">Nexus</h1>
+                <h1 className="text-2xl font-display font-bold">Axis</h1>
                 <p className="text-white/70 text-sm">by EduTech</p>
               </div>
             </div>
@@ -81,10 +81,10 @@ export default function LoginPage() {
           {/* Mobile Logo */}
           <div className="lg:hidden flex items-center gap-3 mb-8 justify-center">
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#E21A23] to-[#B8131A] flex items-center justify-center shadow-glow">
-              <span className="text-white font-bold text-lg">N</span>
+              <span className="text-white font-bold text-lg">A</span>
             </div>
             <div>
-              <h1 className="text-xl font-display font-bold text-[var(--foreground)]">Nexus</h1>
+              <h1 className="text-xl font-display font-bold text-[var(--foreground)]">Axis</h1>
               <p className="text-xs text-[var(--muted-foreground)]">by EduTech</p>
             </div>
           </div>

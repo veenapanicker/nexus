@@ -1,8 +1,8 @@
-# Nexus Design System & Requirements
+# Axis Design System & Requirements
 
 ## Overview
 
-This document outlines the design system specifications, component requirements, and architectural decisions for the Nexus institutional administrator dashboard.
+This document outlines the design system specifications, component requirements, and architectural decisions for the Axis institutional administrator dashboard.
 
 ---
 
@@ -148,10 +148,10 @@ Centralized definitions for:
 | Sharpen | Sharpen | Pink | #F08080 |
 
 **Important**: Product colors use dedicated Tailwind classes:
-- `bg-nexus-purple` / `border-nexus-purple` (Connect)
-- `bg-nexus-red` / `border-nexus-red` (ALEKS)
-- `bg-nexus-green` / `border-nexus-green` (SIMnet)
-- `bg-nexus-pink` / `border-nexus-pink` (Sharpen)
+- `bg-axis-purple` / `border-axis-purple` (Connect)
+- `bg-axis-red` / `border-axis-red` (ALEKS)
+- `bg-axis-green` / `border-axis-green` (SIMnet)
+- `bg-axis-pink` / `border-axis-pink` (Sharpen)
 
 ---
 

@@ -42,7 +42,7 @@ export function ReportFilters({
               "w-full pl-10 pr-4 py-2.5 rounded-lg text-sm",
               "bg-[var(--muted)] border border-transparent",
               "text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]",
-              "focus:outline-none focus:border-nexus-purple focus:ring-1 focus:ring-nexus-purple",
+              "focus:outline-none focus:border-axis-purple focus:ring-1 focus:ring-axis-purple",
               "transition-all"
             )}
           />
@@ -66,7 +66,7 @@ export function ReportFilters({
               "px-4 py-2.5 rounded-lg text-sm",
               "bg-[var(--muted)] border border-transparent",
               "text-[var(--foreground)]",
-              "focus:outline-none focus:border-nexus-purple focus:ring-1 focus:ring-nexus-purple",
+              "focus:outline-none focus:border-axis-purple focus:ring-1 focus:ring-axis-purple",
               "transition-all cursor-pointer"
             )}
           >
@@ -87,7 +87,7 @@ export function ReportFilters({
               "px-4 py-2.5 rounded-lg text-sm",
               "bg-[var(--muted)] border border-transparent",
               "text-[var(--foreground)]",
-              "focus:outline-none focus:border-nexus-purple focus:ring-1 focus:ring-nexus-purple",
+              "focus:outline-none focus:border-axis-purple focus:ring-1 focus:ring-axis-purple",
               "transition-all cursor-pointer"
             )}
           >
@@ -110,7 +110,7 @@ export function ReportFilters({
             }}
             className={cn(
               "px-4 py-2.5 rounded-lg text-sm font-medium",
-              "text-nexus-red hover:bg-nexus-red/10",
+              "text-axis-red hover:bg-axis-red/10",
               "transition-all"
             )}
           >

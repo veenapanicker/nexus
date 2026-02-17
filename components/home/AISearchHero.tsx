@@ -228,8 +228,8 @@ const getAIResults = (query: string): SearchResult[] => {
       {
         type: "help",
         icon: HelpCircle,
-        title: "Getting started with Nexus",
-        description: "Nexus is your central hub for managing EduTech products across your institution",
+        title: "Getting started with Axis",
+        description: "Axis is your central hub for managing EduTech products across your institution",
       },
       {
         type: "help",
@@ -435,7 +435,7 @@ export function AISearchHero() {
               </div>
               <div>
                 <h2 className="text-xl font-display font-bold text-[var(--foreground)]">
-                  Nexus AI Assistant
+                  Axis AI Assistant
                 </h2>
                 <p className="text-sm text-[var(--muted-foreground)]">
                   Search, analyze, and take action across all your data
